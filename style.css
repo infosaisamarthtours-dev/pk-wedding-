@@ -1,0 +1,5765 @@
+/* ==========================================================================
+   Purushothaman & Kanchana - Royal Indian Wedding Invitation Website
+   Colors: Royal Sage & Pista Green, Soft Mint, Ivory & Radiant Gold
+   ========================================================================== */
+
+:root {
+  --bg-deep: #eef5ee;
+  --bg-surface: #e4efe4;
+  --bg-card: #f8fbf8;
+  --bg-card-highlight: #ffffff;
+  
+  --green-sage-deep: #163624;
+  --green-emerald: #1c452e;
+  --green-accent: #2e6d4c;
+  --green-mint-light: #e0eee0;
+  --green-pistachio: #d2e7d2;
+  
+  --gold-primary: #b8860b;
+  --gold-light: #fdfaf0;
+  --gold-bright: #e5b33d;
+  --gold-accent: #c4962c;
+  --gold-dark: #7a5406;
+  --gold-bronze: #5a3d04;
+  
+  --gold-gradient: linear-gradient(135deg, #dfb74c 0%, #b8860b 45%, #8f6507 80%, #dfb74c 100%);
+  --gold-gradient-soft: linear-gradient(135deg, rgba(184, 134, 11, 0.12) 0%, rgba(46, 109, 76, 0.08) 100%);
+  --gold-text-clip: linear-gradient(135deg, #163624 0%, #b8860b 50%, #163624 100%);
+  
+  --maroon-accent: #782230;
+  --maroon-gradient: linear-gradient(135deg, #8a2434 0%, #54111c 100%);
+  
+  --glass-bg: rgba(238, 246, 238, 0.88);
+  --glass-border: rgba(184, 134, 11, 0.35);
+  --glass-shadow: 0 12px 35px rgba(22, 54, 36, 0.12);
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-royal: 'Cinzel', serif;
+  --font-script: 'Great Vibes', cursive;
+  --font-sans: 'Montserrat', sans-serif;
+  --font-tamil: 'Noto Sans Tamil', 'Mukta Malar', 'Latha', sans-serif;
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-deep);
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 15%, #f7fbf6 0%, #edf5ec 55%, #e1ece0 100%);
+  font-family: var(--font-sans);
+  color: #173827;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Floating Golden Sparkle Canvas */
+#sparklesCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   TOP FLOATING NAVIGATION BAR
+   ========================================================================== */
+.top-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(238, 246, 238, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1.5px solid rgba(184, 134, 11, 0.28);
+  box-shadow: 0 4px 20px rgba(22, 54, 36, 0.08);
+  transition: all 0.3s ease;
+}
+
+.top-nav-bar.scrolled {
+  background: rgba(230, 242, 230, 0.97);
+  box-shadow: 0 6px 24px rgba(22, 54, 36, 0.14);
+  border-bottom-color: rgba(184, 134, 11, 0.45);
+}
+
+.nav-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0.65rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Corner PK Monogram Crest Badge */
+.pk-corner-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.pk-crest {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 35% 35%, #234e36, #122c1e);
+  border: 1.8px solid rgba(212, 175, 55, 0.85);
+  box-shadow: 
+    0 0 15px rgba(184, 134, 11, 0.35),
+    inset 0 0 10px rgba(212, 175, 55, 0.25);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pk-crest::before {
+  content: '';
+  position: absolute;
+  inset: -3.5px;
+  border-radius: 50%;
+  border: 1.2px dashed rgba(212, 175, 55, 0.7);
+  animation: rotateCrest 20s linear infinite;
+}
+
+@keyframes rotateCrest {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.pk-crest-text {
+  font-family: var(--font-royal);
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 1.5px;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+.pk-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.pk-brand-main {
+  font-family: var(--font-royal);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pk-brand-sub {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: #235639;
+  opacity: 0.9;
+}
+
+.pk-corner-badge:hover .pk-crest {
+  transform: scale(1.08);
+  box-shadow: 
+    0 0 24px rgba(242, 199, 92, 0.7),
+    inset 0 0 12px rgba(242, 199, 92, 0.4);
+}
+
+/* Nav Center Title */
+.nav-center-title {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .nav-center-title {
+    display: block;
+  }
+}
+
+.nav-couple-names {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  background: linear-gradient(135deg, #173827 0%, #b8860b 45%, #173827 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  animation: goldShimmer 4s ease-in-out infinite alternate;
+}
+
+@keyframes goldShimmer {
+  0% { filter: brightness(0.95); }
+  100% { filter: brightness(1.2) drop-shadow(0 0 8px rgba(184, 134, 11, 0.45)); }
+}
+
+/* Scrolling Animation Marquee Banner */
+.nav-ticker-bar {
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(90deg, #163624 0%, #245239 50%, #163624 100%);
+  border-top: 1px solid rgba(212, 175, 55, 0.35);
+  border-bottom: 1.5px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 4px 15px rgba(22, 54, 36, 0.15);
+  padding: 0.38rem 0;
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-ticker-bar::before,
+.nav-ticker-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 45px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.nav-ticker-bar::before {
+  left: 0;
+  background: linear-gradient(to right, #163624, transparent);
+}
+
+.nav-ticker-bar::after {
+  right: 0;
+  background: linear-gradient(to left, #163624, transparent);
+}
+
+.ticker-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marqueeScroll 22s linear infinite;
+  will-change: transform;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-content {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0 1.25rem;
+  font-family: var(--font-royal);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #f7faf6;
+}
+
+.ticker-item .couple-name {
+  background: linear-gradient(135deg, #fff5d0 0%, #fbd568 40%, #e2be52 80%, #fff5d0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 3px;
+  text-shadow: 0 0 12px rgba(251, 213, 104, 0.4);
+}
+
+.ticker-symbol {
+  color: #fcd764;
+  font-size: 0.75rem;
+  filter: drop-shadow(0 0 5px rgba(252, 215, 100, 0.6));
+}
+
+.nav-link {
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #ecd4b0;
+  letter-spacing: 0.8px;
+  transition: color 0.25s ease;
+  position: relative;
+  padding: 0.3rem 0;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--gold-bright);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gold-gradient);
+  border-radius: 2px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-icon-btn {
+  position: relative;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.2px solid rgba(184, 134, 11, 0.35);
+  color: #173827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(22, 54, 36, 0.08);
+  transition: transform 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.nav-icon-btn:hover {
+  transform: scale(1.08);
+  border-color: var(--gold-accent);
+  background: #fdfaf0;
+}
+
+.nav-icon-btn.playing {
+  background: #1c452e;
+  border-color: var(--gold-bright);
+  color: #fcd764;
+  box-shadow: 0 0 16px rgba(184, 134, 11, 0.4);
+}
+
+.music-wave {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold-accent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav-icon-btn.playing .music-wave {
+  animation: ringPulse 1.8s infinite;
+}
+
+@keyframes ringPulse {
+  0% { transform: scale(0.9); opacity: 0.9; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.nav-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.95rem;
+  border-radius: 50px;
+  background: var(--gold-gradient);
+  color: #1a0a03;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-cta-btn:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.55);
+}
+
+/* ==========================================================================
+   MAIN CONTAINER
+   ========================================================================== */
+.wedding-main-container {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 105px 1.2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.single-image-main {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 115px 1rem 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.website-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 56px;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+/* ==========================================================================
+   SECTION 1: HERO / SAVE THE DATE (1ST IMAGE UNTOUCHED)
+   ========================================================================== */
+.hero-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+/* ==========================================================================
+   A HEARTFELT WELCOME TO OUR FRIENDS & FAMILY SECTION
+   Aesthetic: Soft Sage Green, Ivory & Antique Gold with Romantic Floral Accents
+   ========================================================================== */
+.wedding-welcome-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0 1rem;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.wedding-welcome-section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.welcome-card-frame {
+  width: 100%;
+  max-width: 860px;
+  position: relative;
+}
+
+.welcome-royal-card {
+  width: 100%;
+  background: linear-gradient(180deg, #ffffff 0%, #f9fcf9 40%, #eef5ee 100%);
+  border-radius: 28px;
+  border: 2px solid rgba(184, 134, 11, 0.45);
+  box-shadow: 
+    0 20px 50px rgba(22, 54, 36, 0.1),
+    0 0 35px rgba(184, 134, 11, 0.12),
+    inset 0 0 30px rgba(238, 245, 238, 0.7);
+  padding: 3rem 2.2rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Subtle inner border for luxury card feel */
+.welcome-royal-card::before {
+  content: '';
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  right: 9px;
+  bottom: 9px;
+  border: 1px solid rgba(184, 134, 11, 0.22);
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+/* Golden Corner Filigree Ornaments */
+.card-ornament {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-color: rgba(184, 134, 11, 0.45);
+  border-style: solid;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.card-ornament.tl {
+  top: 14px;
+  left: 14px;
+  border-width: 2px 0 0 2px;
+  border-top-left-radius: 8px;
+}
+
+.card-ornament.tr {
+  top: 14px;
+  right: 14px;
+  border-width: 2px 2px 0 0;
+  border-top-right-radius: 8px;
+}
+
+.card-ornament.bl {
+  bottom: 14px;
+  left: 14px;
+  border-width: 0 0 2px 2px;
+  border-bottom-left-radius: 8px;
+}
+
+.card-ornament.br {
+  bottom: 14px;
+  right: 14px;
+  border-width: 0 2px 2px 0;
+  border-bottom-right-radius: 8px;
+}
+
+/* Top Auspicious Crest & Sacred Emblem (Pristine Clearance & Alignment) */
+.welcome-top-crest {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  margin: 0.2rem auto 1.35rem;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 300px;
+}
+
+.crest-wings-line {
+  flex: 1;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.55), transparent);
+}
+
+.crest-emblem-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffffff 0%, #fdfbf5 100%);
+  border: 1.5px solid rgba(184, 134, 11, 0.45);
+  color: #b8860b;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 14px rgba(22, 54, 36, 0.08), 0 0 16px rgba(184, 134, 11, 0.2);
+  flex-shrink: 0;
+  animation: welcomeHeartPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes welcomeHeartPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 14px rgba(22, 54, 36, 0.08), 0 0 14px rgba(184, 134, 11, 0.15);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 6px 18px rgba(22, 54, 36, 0.12), 0 0 20px rgba(184, 134, 11, 0.3);
+  }
+}
+
+/* Dual Language Showcase: Both Always Directly on Screen */
+.welcome-dual-showcase {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-bilingual-col {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Language Chip Badge */
+.welcome-lang-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.28rem 0.95rem;
+  border-radius: 50px;
+  background: rgba(22, 54, 36, 0.06);
+  border: 1px solid rgba(184, 134, 11, 0.35);
+  color: #1a422b;
+  font-family: var(--font-royal);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 6px rgba(22, 54, 36, 0.04);
+}
+
+.welcome-lang-chip.chip-ta {
+  background: rgba(184, 134, 11, 0.08);
+  border-color: rgba(184, 134, 11, 0.45);
+  color: #724e06;
+  font-family: var(--font-tamil);
+  letter-spacing: 0.5px;
+}
+
+.welcome-lang-chip .chip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #b8860b;
+  box-shadow: 0 0 6px rgba(184, 134, 11, 0.6);
+}
+
+/* Delicate Transition Divider Between English & Tamil */
+.welcome-dual-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  width: 100%;
+  max-width: 360px;
+  margin: 1.4rem auto 1.6rem;
+  position: relative;
+  z-index: 2;
+}
+
+.welcome-dual-divider .dual-div-line {
+  flex: 1;
+  height: 1.2px;
+  background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.5), transparent);
+}
+
+.welcome-dual-divider .dual-div-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #b8860b;
+}
+
+.welcome-dual-divider .dual-flourish {
+  font-size: 1.1rem;
+  color: #2e6d4c;
+  opacity: 0.75;
+}
+
+.welcome-dual-divider i {
+  color: #b8860b;
+  font-size: 0.88rem;
+  filter: drop-shadow(0 2px 4px rgba(184, 134, 11, 0.25));
+}
+
+@media (min-width: 820px) {
+  .welcome-dual-showcase {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: start;
+    gap: 1.8rem;
+  }
+
+  .welcome-dual-divider {
+    flex-direction: column;
+    height: 100%;
+    min-height: 270px;
+    width: auto;
+    margin: 0;
+    gap: 0.75rem;
+  }
+
+  .welcome-dual-divider .dual-div-line {
+    width: 1.2px;
+    height: auto;
+    flex: 1;
+    background: linear-gradient(180deg, transparent, rgba(184, 134, 11, 0.5) 50%, transparent);
+  }
+}
+
+/* Headings (Clean Line Spacing & No Awkward Breaking) */
+.welcome-title-en {
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 3.2vw, 2.1rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, #163624 0%, #946d0a 50%, #163624 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0.1rem 0 0.4rem;
+  line-height: 1.25;
+  letter-spacing: 0.5px;
+  white-space: normal;
+}
+
+.welcome-title-ta {
+  font-family: var(--font-tamil);
+  font-size: clamp(1.35rem, 3vw, 1.95rem);
+  font-weight: 700;
+  color: #163624;
+  margin: 0.1rem 0 0.4rem;
+  line-height: 1.3;
+  letter-spacing: 0.3px;
+  white-space: normal;
+}
+
+/* Delicate Gold Mandala Divider */
+.welcome-gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  max-width: 260px;
+  margin: 0.35rem auto 1.1rem;
+}
+
+.w-div-line {
+  flex: 1;
+  height: 1.2px;
+  background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.55), transparent);
+}
+
+.w-div-gem {
+  color: #dfb74c;
+  font-size: 0.72rem;
+}
+
+.w-div-heart {
+  color: #b8860b;
+  font-size: 0.82rem;
+  filter: drop-shadow(0 2px 4px rgba(184, 134, 11, 0.25));
+}
+
+/* Welcome Message Typography */
+.welcome-text-en {
+  font-family: var(--font-sans);
+  font-size: clamp(0.94rem, 2vw, 1.04rem);
+  line-height: 1.7;
+  color: #234932;
+  max-width: 600px;
+  margin: 0 auto 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+}
+
+.welcome-text-ta {
+  font-family: var(--font-tamil);
+  font-size: clamp(0.96rem, 2.1vw, 1.1rem);
+  line-height: 1.85;
+  color: #20442e;
+  max-width: 620px;
+  margin: 0 auto 0.75rem;
+  letter-spacing: 0.2px;
+}
+
+.highlight-blessing {
+  color: #163624;
+  font-weight: 600;
+}
+
+/* Unified Auspicious Wedding Date Pill */
+.welcome-date-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.65rem 1.6rem;
+  margin: 1.5rem auto 0;
+  background: linear-gradient(135deg, #ffffff 0%, #fcfaf3 100%);
+  border: 1.5px solid rgba(184, 134, 11, 0.45);
+  border-radius: 50px;
+  box-shadow: 
+    0 4px 18px rgba(22, 54, 36, 0.06),
+    0 0 20px rgba(184, 134, 11, 0.12);
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.welcome-date-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(22, 54, 36, 0.1), 0 0 24px rgba(184, 134, 11, 0.22);
+}
+
+.date-pill-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #163624 0%, #2b6744 100%);
+  color: #ffd56b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 213, 107, 0.4);
+}
+
+.date-pill-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+}
+
+.date-pill-primary {
+  font-family: var(--font-royal);
+  font-size: clamp(0.85rem, 1.8vw, 0.98rem);
+  font-weight: 800;
+  color: #163624;
+  letter-spacing: 0.6px;
+}
+
+.date-pill-secondary {
+  font-family: var(--font-tamil);
+  font-size: clamp(0.74rem, 1.6vw, 0.84rem);
+  font-weight: 600;
+  color: #7a5406;
+  letter-spacing: 0.2px;
+}
+
+/* Couple Signatures Footer at Bottom */
+.welcome-couple-footer {
+  margin-top: 1.2rem;
+  padding-top: 1.4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.welcome-footer-divider {
+  width: 100%;
+  max-width: 320px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.5), transparent);
+  margin: 0 auto 1.3rem;
+}
+
+.welcome-signatures {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.couple-names-en {
+  font-family: var(--font-royal);
+  font-size: clamp(1.3rem, 3.2vw, 1.75rem);
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #163624 0%, #b8860b 50%, #163624 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.couple-names-ta {
+  font-family: var(--font-tamil);
+  font-size: clamp(1.2rem, 3vw, 1.55rem);
+  font-weight: 700;
+  color: #163624;
+  letter-spacing: 0.5px;
+  margin-top: 0.2rem;
+}
+
+.welcome-subnote {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  color: #50725c;
+  margin-top: 0.75rem;
+}
+
+.welcome-subnote i {
+  color: #b8860b;
+  font-size: 0.75rem;
+}
+
+/* Responsive Welcome Card Adjustments */
+@media (max-width: 768px) {
+  .welcome-royal-card {
+    padding: 2.5rem 1.6rem 2rem;
+    border-radius: 22px;
+  }
+  
+  .welcome-content-viewport.dual-mode {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .welcome-content-viewport.dual-mode::after {
+    display: none;
+  }
+
+  .welcome-content-viewport.dual-mode .welcome-lang-pane:first-child {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px dashed rgba(184, 134, 11, 0.35);
+  }
+
+  .welcome-date-pill {
+    padding: 0.6rem 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-royal-card {
+    padding: 2.2rem 1.15rem 1.8rem;
+    border-radius: 20px;
+  }
+
+  .welcome-top-crest {
+    margin-bottom: 1.1rem;
+  }
+
+  .welcome-lang-tabs {
+    gap: 0.25rem;
+    padding: 0.22rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .welcome-lang-tab-btn {
+    padding: 0.28rem 0.75rem;
+    font-size: 0.72rem;
+    min-height: 29px;
+  }
+
+  .welcome-date-pill {
+    padding: 0.55rem 1rem;
+    gap: 0.65rem;
+  }
+
+  .date-pill-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wedding-welcome-section {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .welcome-top-crest .crest-emblem-badge {
+    animation: none !important;
+  }
+}
+
+/* ==========================================================================
+   SECTION 2: SINGLE ROYAL WEDDING INVITATION CARD (GROOM & BRIDE TOGETHER)
+   ========================================================================== */
+.single-wedding-card-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.royal-unified-card {
+  width: 100%;
+  max-width: 860px;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbf7 100%);
+  border-radius: 28px;
+  border: 2px solid rgba(184, 134, 11, 0.45);
+  box-shadow: 
+    0 24px 60px rgba(22, 54, 36, 0.12),
+    0 0 35px rgba(184, 134, 11, 0.15);
+  padding: 2.8rem 2.2rem 2.2rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.unified-card-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.sacred-ganesha-badge {
+  margin-bottom: 0.6rem;
+}
+
+.shloka-mini {
+  display: inline-block;
+  font-family: var(--font-royal);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #1a422b;
+  padding: 0.3rem 1.2rem;
+  background: rgba(46, 109, 76, 0.08);
+  border-radius: 50px;
+  border: 1px solid rgba(184, 134, 11, 0.35);
+}
+
+.unified-card-title {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #163624 0%, #b8860b 50%, #163624 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0.3rem 0 0.5rem;
+}
+
+.gold-mandala-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0.75rem auto 1rem;
+  max-width: 240px;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.7), transparent);
+}
+
+.divider-icon {
+  color: #c4962c;
+  font-size: 0.95rem;
+}
+
+.unified-card-blessing {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: #2b503c;
+  font-size: 1.05rem;
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   1-BY-1 GRAND SEQUENTIAL COUPLE LAYOUT
+   ========================================================================== */
+.sequential-couple-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1.8rem 0;
+  width: 100%;
+}
+
+.grand-profile-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 680px;
+  padding: 1.6rem 2rem;
+  gap: 2rem;
+  border-radius: 26px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(246, 251, 246, 0.92) 100%);
+  border: 1.5px solid rgba(184, 134, 11, 0.32);
+  box-shadow: 
+    0 12px 35px rgba(22, 54, 36, 0.08),
+    0 0 20px rgba(184, 134, 11, 0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  position: relative;
+}
+
+.grand-profile-row:hover {
+  transform: translateY(-4px);
+  border-color: rgba(184, 134, 11, 0.65);
+  box-shadow: 0 16px 42px rgba(22, 54, 36, 0.13), 0 0 25px rgba(184, 134, 11, 0.22);
+}
+
+/* Groom Profile: Horizontal with Image on Left, Details on Right */
+.grand-profile-row.groom-row {
+  flex-direction: row;
+}
+
+.grand-profile-row.groom-row .grand-profile-text {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.grand-profile-row.groom-row .grand-family-block {
+  text-align: left;
+}
+
+/* Bride Profile: Horizontal with Image on Right, Details on Left */
+.grand-profile-row.bride-row {
+  flex-direction: row-reverse;
+}
+
+.grand-profile-row.bride-row .grand-profile-text {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.grand-profile-row.bride-row .grand-family-block {
+  text-align: left;
+}
+
+.grand-portrait-frame {
+  width: 190px;
+  height: 240px;
+  margin: 0;
+  flex-shrink: 0;
+  border-radius: 95px 95px 22px 22px;
+  overflow: hidden;
+  position: relative;
+  background: #ffffff;
+  border: 3.5px solid #c4962c;
+  box-shadow: 
+    0 14px 32px rgba(22, 54, 36, 0.16),
+    0 0 24px rgba(196, 150, 44, 0.28);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.grand-portrait-frame:hover {
+  transform: scale(1.02);
+  box-shadow: 
+    0 18px 40px rgba(22, 54, 36, 0.22),
+    0 0 32px rgba(196, 150, 44, 0.4);
+}
+
+.grand-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.45s ease;
+  user-select: none;
+}
+
+.grand-portrait-frame:hover .grand-portrait-img {
+  transform: scale(1.06);
+}
+
+.grand-profile-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+}
+
+.grand-role-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.32rem 1.15rem;
+  border-radius: 50px;
+  font-family: var(--font-royal);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+.groom-pill {
+  background: linear-gradient(135deg, #1b452f, #123020);
+  color: #ffd976;
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  box-shadow: 0 2px 10px rgba(27, 69, 47, 0.3);
+}
+
+.bride-pill {
+  background: linear-gradient(135deg, #872033, #5c101e);
+  color: #ffd976;
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  box-shadow: 0 2px 10px rgba(135, 32, 51, 0.3);
+}
+
+.grand-person-name {
+  font-family: var(--font-royal);
+  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+  font-weight: 800;
+  color: #163624;
+  letter-spacing: 0.8px;
+  line-height: 1.25;
+  margin-bottom: 0.35rem;
+}
+
+.grand-degree-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.28rem 1rem;
+  border-radius: 50px;
+  background: rgba(184, 134, 11, 0.12);
+  border: 1.2px solid rgba(184, 134, 11, 0.45);
+  color: #7a5406;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  margin-bottom: 0.85rem;
+}
+
+.grand-family-block {
+  border-top: 1.5px dashed rgba(184, 134, 11, 0.35);
+  padding-top: 0.85rem;
+  width: 100%;
+}
+
+.family-relation-label {
+  display: block;
+  font-family: var(--font-royal);
+  font-size: 0.72rem;
+  letter-spacing: 2.2px;
+  color: #4a755d;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.family-parents-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 1.8vw, 1.22rem);
+  font-weight: 700;
+  color: #173827;
+  line-height: 1.4;
+}
+
+/* Central Sacred Weds Connector */
+.grand-weds-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  width: 100%;
+  max-width: 440px;
+  margin: 0.4rem 0;
+}
+
+.connector-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.75), transparent);
+}
+
+.weds-mandala-crest {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #234e36, #122c1e);
+  border: 2.5px solid #dfb74c;
+  box-shadow: 
+    0 0 30px rgba(184, 134, 11, 0.5),
+    inset 0 0 14px rgba(212, 175, 55, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffd56b;
+  animation: pulseKnot 2.8s ease-in-out infinite alternate;
+}
+
+.weds-text-bold {
+  font-family: var(--font-royal);
+  font-weight: 900;
+  font-size: 0.92rem;
+  letter-spacing: 2.5px;
+  line-height: 1;
+}
+
+.weds-floral-knot {
+  font-size: 0.95rem;
+  color: #fcd764;
+  margin-top: 4px;
+}
+
+/* Auspicious Date & Actions Banner */
+.wedding-actions-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  background: linear-gradient(135deg, #163624 0%, #204b33 100%);
+  border-radius: 20px;
+  padding: 1.2rem 1.8rem;
+  border: 1.5px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 10px 25px rgba(22, 54, 36, 0.18);
+  margin-top: 1rem;
+}
+
+.banner-date-group {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  text-align: left;
+}
+
+.calendar-icon-box {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.2);
+  border: 1.2px solid rgba(212, 175, 55, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffd56b;
+  font-size: 1.25rem;
+}
+
+.date-primary {
+  display: block;
+  font-family: var(--font-royal);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.date-secondary {
+  display: block;
+  font-size: 0.82rem;
+  color: #c8decb;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.banner-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.royal-btn-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.38rem 1rem;
+  min-height: 34px;
+  border-radius: 50px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.royal-btn-action.primary {
+  background: linear-gradient(135deg, #f7d576 0%, #d4a737 45%, #b6851d 85%, #f1cb5f 100%);
+  color: #12331f;
+  border: 1.2px solid rgba(255, 245, 205, 0.7);
+  box-shadow: 0 3px 12px rgba(184, 134, 11, 0.28);
+}
+
+.royal-btn-action.primary i {
+  color: #12331f;
+  font-size: 0.85rem;
+}
+
+.royal-btn-action.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(184, 134, 11, 0.4);
+  filter: brightness(1.04);
+}
+
+.royal-btn-action.secondary {
+  background: linear-gradient(135deg, #18432a 0%, #245839 100%);
+  color: #ffffff;
+  border: 1.5px solid #c4962c;
+  box-shadow: 0 3px 12px rgba(22, 54, 36, 0.2);
+}
+
+.royal-btn-action.secondary i {
+  color: #ffd56b;
+  font-size: 0.85rem;
+}
+
+.royal-btn-action.secondary:hover {
+  background: linear-gradient(135deg, #1e5234 0%, #2d6b46 100%);
+  border-color: #ffd56b;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(22, 54, 36, 0.38);
+}
+
+/* Responsive Single Unified Card for Mobile */
+@media (max-width: 680px) {
+  .royal-unified-card {
+    padding: 2.2rem 1.1rem 1.8rem;
+    border-radius: 22px;
+  }
+
+  .unified-card-title {
+    font-size: 1.85rem;
+  }
+
+  .grand-profile-row {
+    padding: 1.2rem 1rem;
+    gap: 1.1rem;
+    border-radius: 20px;
+  }
+
+  .grand-portrait-frame {
+    width: 130px;
+    height: 165px;
+    border-radius: 65px 65px 16px 16px;
+    border-width: 2.5px;
+  }
+
+  .grand-role-pill {
+    padding: 0.22rem 0.8rem;
+    font-size: 0.65rem;
+    letter-spacing: 1.3px;
+    margin-bottom: 0.3rem;
+  }
+
+  .grand-person-name {
+    font-size: 1.22rem;
+    white-space: normal;
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+  }
+
+  .grand-degree-badge {
+    padding: 0.2rem 0.75rem;
+    font-size: 0.76rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .grand-family-block {
+    padding-top: 0.6rem;
+  }
+
+  .family-relation-label {
+    font-size: 0.64rem;
+    letter-spacing: 1.6px;
+    margin-bottom: 0.2rem;
+  }
+
+  .family-parents-text {
+    font-size: 0.98rem;
+    line-height: 1.35;
+  }
+
+  @media (max-width: 400px) {
+    .grand-profile-row {
+      padding: 0.95rem 0.75rem;
+      gap: 0.75rem;
+      border-radius: 16px;
+    }
+
+    .grand-portrait-frame {
+      width: 102px;
+      height: 130px;
+      border-radius: 51px 51px 14px 14px;
+      border-width: 2px;
+    }
+
+    .grand-person-name {
+      font-size: 1.05rem;
+    }
+
+    .family-parents-text {
+      font-size: 0.85rem;
+    }
+  }
+
+  .wedding-actions-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.3rem 1rem;
+  }
+
+  .banner-date-group {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner-buttons {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .royal-btn-action {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   ROYAL MOMENTS & PHOTO GALLERY SECTION
+   ========================================================================== */
+.gallery-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.8rem;
+}
+
+.gallery-card-frame {
+  width: 100%;
+  max-width: 860px;
+  background: linear-gradient(180deg, #ffffff 0%, #fefdf9 100%);
+  border-radius: 28px;
+  border: 2px solid rgba(184, 134, 11, 0.45);
+  box-shadow: 
+    0 24px 60px rgba(22, 54, 36, 0.12),
+    0 0 35px rgba(212, 175, 55, 0.15);
+  padding: 2.8rem 2.2rem 2.2rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+/* Left-and-Right Scrollable Carousel Track */
+.gallery-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 0.4rem 0.2rem 0.8rem;
+  overflow: hidden;
+}
+
+.gallery-carousel-track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 0.5rem 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(184, 134, 11, 0.45) transparent;
+}
+
+.gallery-carousel-track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.gallery-carousel-track::-webkit-scrollbar-track {
+  background: rgba(22, 54, 36, 0.04);
+  border-radius: 10px;
+}
+
+.gallery-carousel-track::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #b8860b, #e5b33d);
+  border-radius: 10px;
+}
+
+/* Pure, Clean Photo Carousel Cards (Without Text Overlays) */
+.gallery-carousel-card {
+  flex: 0 0 calc(33.333% - 0.85rem);
+  max-width: 270px;
+  min-width: 220px;
+  scroll-snap-align: center;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1.8px solid rgba(184, 134, 11, 0.38);
+  box-shadow: 0 8px 24px rgba(22, 54, 36, 0.08);
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  aspect-ratio: 3 / 4;
+}
+
+.gallery-carousel-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(212, 175, 55, 0.85);
+  box-shadow: 
+    0 16px 36px rgba(22, 54, 36, 0.18),
+    0 0 25px rgba(212, 175, 55, 0.3);
+}
+
+.gallery-photo-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #f0f5ef;
+}
+
+.gallery-photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.gallery-carousel-card:hover .gallery-photo-box img {
+  transform: scale(1.06);
+}
+
+/* Quick Zoom Badge (Top Right) */
+.gallery-zoom-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(22, 54, 36, 0.88);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 213, 107, 0.7);
+  color: #ffd56b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: all 0.25s ease;
+  z-index: 3;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-carousel-card:hover .gallery-zoom-badge {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Carousel Pagination Dots Bar */
+.gallery-dots-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.1rem;
+}
+
+.gallery-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(22, 54, 36, 0.22);
+  border: 1px solid rgba(184, 134, 11, 0.4);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0;
+}
+
+.gallery-dot:hover {
+  background: rgba(184, 134, 11, 0.6);
+  transform: scale(1.2);
+}
+
+.gallery-dot.active {
+  width: 24px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #b8860b, #e5b33d);
+  border-color: #ffd56b;
+  box-shadow: 0 2px 8px rgba(184, 134, 11, 0.4);
+}
+
+/* Lightbox Fullscreen Modal */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 24, 16, 0.94);
+  backdrop-filter: blur(14px);
+}
+
+.lightbox-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 90vw;
+  max-height: 92vh;
+  width: 100%;
+}
+
+.lightbox-header {
+  position: absolute;
+  top: -46px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+}
+
+.lightbox-counter {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #ffd56b;
+  letter-spacing: 1px;
+  background: rgba(22, 54, 36, 0.85);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+.lightbox-close-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(22, 54, 36, 0.9);
+  border: 1.5px solid #ffd56b;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lightbox-close-btn:hover {
+  background: #ffd56b;
+  color: #163624;
+  transform: scale(1.1);
+}
+
+.lightbox-media-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 720px;
+  max-height: 72vh;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: 16px;
+  border: 2px solid rgba(212, 175, 55, 0.7);
+  box-shadow: 
+    0 24px 60px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(212, 175, 55, 0.35);
+  animation: zoomLightbox 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes zoomLightbox {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.lightbox-arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(22, 54, 36, 0.88);
+  backdrop-filter: blur(6px);
+  border: 1.5px solid #ffd56b;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 5;
+}
+
+.lightbox-arrow-btn:hover {
+  background: #ffd56b;
+  color: #163624;
+  transform: translateY(-50%) scale(1.12);
+}
+
+.lightbox-arrow-btn.prev {
+  left: 20px;
+}
+
+.lightbox-arrow-btn.next {
+  right: 20px;
+}
+
+.lightbox-footer {
+  margin-top: 0.9rem;
+  text-align: center;
+  max-width: 600px;
+}
+
+.lightbox-title {
+  font-family: var(--font-royal);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffd56b;
+  margin-bottom: 0.2rem;
+}
+
+.lightbox-caption {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  color: #e4efe4;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .gallery-card-frame {
+    padding: 2.2rem 1.25rem 1.8rem;
+    border-radius: 22px;
+  }
+
+  .gallery-main-title {
+    font-size: 1.85rem;
+  }
+
+  .gallery-carousel-card {
+    flex: 0 0 72%;
+    max-width: 290px;
+    min-width: 220px;
+  }
+
+  .lightbox-header {
+    top: -42px;
+  }
+
+  .lightbox-arrow-btn.prev {
+    left: 8px;
+  }
+
+  .lightbox-arrow-btn.next {
+    right: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-carousel-card {
+    flex: 0 0 82%;
+    max-width: 280px;
+    min-width: 200px;
+  }
+}
+
+/* ==========================================================================
+   GRAND WEDDING RECEPTION SECTION (TUESDAY, 10TH NOVEMBER 2026)
+   ========================================================================== */
+.reception-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.8rem;
+}
+
+.reception-card-frame {
+  width: 100%;
+  max-width: 860px;
+  background: linear-gradient(180deg, #ffffff 0%, #fdf8f4 100%);
+  border-radius: 28px;
+  border: 2px solid rgba(184, 134, 11, 0.45);
+  box-shadow: 
+    0 24px 60px rgba(22, 54, 36, 0.12),
+    0 0 35px rgba(212, 175, 55, 0.15);
+  padding: 2.8rem 2.2rem 2.2rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.reception-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.reception-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1.1rem;
+  border-radius: 50px;
+  background: linear-gradient(135deg, rgba(142, 43, 60, 0.1) 0%, rgba(212, 175, 55, 0.15) 100%);
+  border: 1px solid rgba(184, 134, 11, 0.45);
+  color: #7d1f30;
+  font-family: var(--font-royal);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.reception-main-title {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #163624;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.reception-blessing-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: #3d5849;
+  max-width: 660px;
+  margin: 0.8rem auto 0;
+  line-height: 1.6;
+}
+
+.reception-showcase-card {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0.5rem 0 0;
+  box-shadow: none;
+  text-align: left;
+}
+
+.reception-media-wrap {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 350px;
+  border: 1.8px solid rgba(184, 134, 11, 0.4);
+  box-shadow: 0 10px 28px rgba(22, 54, 36, 0.12);
+}
+
+.reception-stage-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.reception-showcase-card:hover .reception-stage-img {
+  transform: scale(1.04);
+}
+
+.reception-stage-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: linear-gradient(135deg, rgba(142, 43, 60, 0.92) 0%, rgba(98, 22, 36, 0.95) 100%);
+  color: #ffe28a;
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+  font-family: var(--font-royal);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  border: 1px solid rgba(255, 226, 138, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.reception-floating-time {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  background: rgba(22, 54, 36, 0.92);
+  color: #ffffff;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.reception-info-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Reception Date & Event Details (Directly integrated in the Single Card) */
+.reception-royal-date-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.reception-card-corner {
+  display: none !important;
+}
+
+.reception-date-top-tag {
+  font-family: var(--font-royal);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #8e2b3c;
+  text-transform: uppercase;
+  margin-bottom: 0.55rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.28rem 0.95rem;
+  border-radius: 50px;
+  background: rgba(142, 43, 60, 0.08);
+  border: 1px solid rgba(142, 43, 60, 0.25);
+}
+
+.reception-weekday-label {
+  font-family: var(--font-royal);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #b0821e;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.reception-big-date-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+  margin: 0.35rem 0 0.85rem;
+}
+
+.reception-date-number {
+  font-family: var(--font-royal);
+  font-size: 4.8rem;
+  font-weight: 900;
+  color: #163624;
+  line-height: 0.9;
+  letter-spacing: -2px;
+  text-shadow: 0 2px 10px rgba(22, 54, 36, 0.12);
+}
+
+.reception-date-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 1px;
+}
+
+.reception-date-month {
+  font-family: var(--font-royal);
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #163624;
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+
+.reception-date-year {
+  font-family: var(--font-royal);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #8e2b3c;
+  letter-spacing: 2.5px;
+  line-height: 1.1;
+}
+
+.reception-date-dots {
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #a37213;
+  letter-spacing: 1.8px;
+  margin-top: 3px;
+}
+
+.reception-timing-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background: rgba(22, 54, 36, 0.06);
+  border: 1.2px solid rgba(184, 134, 11, 0.4);
+  padding: 0.45rem 1rem;
+  border-radius: 50px;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #163624;
+  margin-bottom: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.reception-timing-pill .time-item i {
+  color: #8e2b3c;
+  margin-right: 0.25rem;
+}
+
+.reception-timing-pill .time-sep {
+  color: #d4a737;
+  font-size: 0.75rem;
+}
+
+.reception-card-blessing {
+  font-family: var(--font-serif);
+  font-size: 0.96rem;
+  color: #425f4e;
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  max-width: 440px;
+  text-align: center;
+}
+
+.reception-actions-row {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.reception-actions-row .royal-btn-action {
+  flex: 1 1 0;
+  min-width: 140px;
+  min-height: 34px;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  padding: 0.38rem 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .reception-card-frame {
+    padding: 2rem 1.25rem 1.6rem;
+    border-radius: 22px;
+  }
+
+  .reception-main-title {
+    font-size: 1.85rem;
+  }
+
+  .reception-blessing-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .reception-showcase-card {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+    padding: 0;
+  }
+
+  .reception-media-wrap {
+    height: 230px;
+  }
+
+  .reception-royal-date-card {
+    padding: 0;
+  }
+
+  .reception-date-number {
+    font-size: 3.6rem;
+  }
+
+  .reception-date-month {
+    font-size: 1.3rem;
+  }
+
+  .reception-date-year {
+    font-size: 1.1rem;
+  }
+
+  .reception-actions-row {
+    flex-direction: column;
+  }
+
+  .reception-actions-row .royal-btn-action {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   SECTION 3: VENUES, HOME LOCATION & DISTANCE ROUTE
+   ========================================================================== */
+.venues-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.venues-main-card {
+  width: 100%;
+  max-width: 860px;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbf7 100%);
+  border-radius: 28px;
+  border: 2px solid rgba(184, 134, 11, 0.45);
+  box-shadow: 
+    0 24px 60px rgba(22, 54, 36, 0.12),
+    0 0 35px rgba(184, 134, 11, 0.15);
+  padding: 2.8rem 2.2rem 2.2rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.venues-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.venues-title {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #163624 0%, #b8860b 50%, #163624 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0.3rem 0 0.5rem;
+}
+
+.venues-blessing-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: #2b503c;
+  font-size: 1.05rem;
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.venues-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.2rem;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+/* Individual Location Card */
+.venue-location-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1.8px solid rgba(184, 134, 11, 0.35);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(22, 54, 36, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  text-align: left;
+}
+
+.venue-location-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(184, 134, 11, 0.65);
+  box-shadow: 
+    0 20px 48px rgba(22, 54, 36, 0.15),
+    0 0 20px rgba(184, 134, 11, 0.2);
+}
+
+.venue-photo-wrap {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+  background: #eef5ee;
+}
+
+.venue-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s ease;
+  user-select: none;
+}
+
+.venue-location-card:hover .venue-photo-img {
+  transform: scale(1.04);
+}
+
+.venue-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  padding: 0.4rem 1.1rem;
+  border-radius: 50px;
+  font-family: var(--font-royal);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.home-badge {
+  background: rgba(22, 54, 36, 0.92);
+  backdrop-filter: blur(8px);
+  color: #ffd56b;
+  border: 1.2px solid rgba(212, 175, 55, 0.6);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+.hall-badge {
+  background: rgba(135, 32, 51, 0.92);
+  backdrop-filter: blur(8px);
+  color: #ffd56b;
+  border: 1.2px solid rgba(212, 175, 55, 0.6);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+.temple-badge {
+  background: linear-gradient(135deg, rgba(142, 43, 60, 0.94) 0%, rgba(98, 22, 36, 0.96) 100%);
+  backdrop-filter: blur(8px);
+  color: #ffe28a;
+  border: 1.2px solid rgba(255, 226, 138, 0.65);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+  white-space: nowrap;
+  font-size: 0.74rem;
+  padding: 0.32rem 0.85rem;
+}
+
+.venue-photo-time-pill {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  padding: 0.32rem 0.85rem;
+  border-radius: 50px;
+  background: rgba(22, 54, 36, 0.92);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  border: 1.2px solid rgba(212, 175, 55, 0.55);
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+.venue-photo-time-pill i {
+  color: #ffd56b;
+}
+
+.event-timing-tag.celebration-tag {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(184, 134, 11, 0.2) 100%);
+  border: 1.2px solid rgba(184, 134, 11, 0.55);
+  color: #724f0c;
+}
+
+.event-timing-tag.celebration-tag i {
+  color: #c48b19;
+}
+
+/* Sacred Muhurtham Card Layout & Structure */
+.venue-header-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 0.9rem;
+}
+
+.venue-ceremony-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.22rem 0.75rem;
+  border-radius: 50px;
+  background: rgba(142, 43, 60, 0.08);
+  border: 1px solid rgba(142, 43, 60, 0.28);
+  color: #8e2b3c;
+  font-family: var(--font-royal);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  width: fit-content;
+}
+
+.venue-tamil-name {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: #8e2b3c;
+  letter-spacing: 0.5px;
+  margin-top: 1px;
+}
+
+.muhurtham-highlight-box {
+  display: grid;
+  grid-template-columns: 1fr auto 1.15fr;
+  align-items: center;
+  gap: 0.8rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 250, 242, 0.98) 100%);
+  border: 1.5px solid rgba(184, 134, 11, 0.45);
+  border-radius: 16px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.9rem;
+  box-shadow: 0 4px 16px rgba(22, 54, 36, 0.05);
+}
+
+.muhurtham-box-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-align: left;
+}
+
+.muhurtham-box-item.highlight {
+  text-align: right;
+}
+
+.m-box-label {
+  font-family: var(--font-royal);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: #8e2b3c;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.muhurtham-box-item.highlight .m-box-label {
+  justify-content: flex-end;
+  color: #163624;
+}
+
+.m-box-val {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #163624;
+}
+
+.muhurtham-box-item.highlight .m-box-val {
+  color: #8e2b3c;
+  font-weight: 800;
+}
+
+.muhurtham-box-sep {
+  width: 1px;
+  height: 32px;
+  background: rgba(184, 134, 11, 0.35);
+}
+
+.venue-address-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.55rem 0.85rem;
+  background: rgba(22, 54, 36, 0.04);
+  border: 1px solid rgba(184, 134, 11, 0.25);
+  border-radius: 12px;
+  margin-bottom: 0.85rem;
+}
+
+.venue-address-icon {
+  color: #b8860b;
+  font-size: 0.95rem;
+  margin-top: 2px;
+}
+
+.venue-address-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.addr-main {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #163624;
+}
+
+.addr-coords {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  color: #557964;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.venue-card-actions.dual-actions {
+  display: flex;
+  gap: 0.65rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.venue-card-actions.dual-actions .royal-btn-action {
+  flex: 1 1 0;
+  min-width: 140px;
+}
+
+.venue-collapsible-map {
+  margin-top: 0.95rem;
+  width: 100%;
+  animation: fadeInMap 0.3s ease;
+}
+
+@keyframes fadeInMap {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.map-landmark-note {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  color: #644a10;
+  background: rgba(184, 134, 11, 0.12);
+  border: 1px solid rgba(184, 134, 11, 0.35);
+  border-radius: 10px;
+  padding: 0.42rem 0.75rem;
+  margin-bottom: 0.55rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  line-height: 1.35;
+}
+
+.collapsible-iframe-wrap {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1.8px solid rgba(184, 134, 11, 0.4);
+  box-shadow: 0 6px 20px rgba(22, 54, 36, 0.1);
+}
+
+.collapsible-iframe-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 210px;
+}
+
+.venue-details-body {
+  padding: 1.8rem 1.8rem 1.6rem;
+}
+
+.venue-name {
+  font-family: var(--font-royal);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #163624;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.35rem;
+}
+
+.venue-coords-text {
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  color: #5a7d69;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.75rem;
+}
+
+.event-timing-tags-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 0.95rem;
+}
+
+.event-timing-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.95rem;
+  border-radius: 50px;
+  background: rgba(184, 134, 11, 0.12);
+  border: 1.2px solid rgba(184, 134, 11, 0.45);
+  color: #7a5406;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.event-timing-tag.reception-tag {
+  background: linear-gradient(135deg, rgba(140, 30, 48, 0.12) 0%, rgba(212, 175, 55, 0.18) 100%);
+  border: 1.2px solid rgba(184, 134, 11, 0.55);
+  color: #721c2c;
+  box-shadow: 0 2px 8px rgba(140, 30, 48, 0.08);
+}
+
+.event-timing-tag.reception-tag i {
+  color: #b52b42;
+  font-size: 0.85rem;
+}
+
+.event-timing-tag.muhurtham-tag {
+  background: rgba(22, 54, 36, 0.08);
+  border: 1.2px solid rgba(22, 54, 36, 0.32);
+  color: #163624;
+}
+
+.event-timing-tag.muhurtham-tag i {
+  color: #1f5734;
+  font-size: 0.85rem;
+}
+
+.venue-desc {
+  font-family: var(--font-serif);
+  font-size: 1.02rem;
+  color: #2c513d;
+  line-height: 1.55;
+  margin-bottom: 1.3rem;
+}
+
+.venue-map-frame {
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2px solid rgba(184, 134, 11, 0.38);
+  box-shadow: 0 8px 24px rgba(22, 54, 36, 0.1);
+  margin-bottom: 1.2rem;
+  background: #f0f5ef;
+}
+
+.venue-map-frame iframe {
+  display: block;
+  width: 100%;
+  height: 270px;
+}
+
+.venue-card-actions {
+  width: 100%;
+  margin-top: 0.8rem;
+}
+
+.venue-card-actions .royal-btn-action {
+  width: 100%;
+  padding: 0.38rem 0.95rem;
+  min-height: 34px;
+  font-size: 0.78rem;
+  gap: 0.4rem;
+}
+
+.full-width {
+  width: 100%;
+  justify-content: center;
+}
+
+/* THREE STOPS SHOWCASE GRID */
+.three-stops-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .three-stops-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .three-stops-grid {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .muhurtham-highlight-box {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 0.7rem 0.85rem;
+  }
+
+  .muhurtham-box-item {
+    text-align: center;
+    align-items: center;
+  }
+
+  .muhurtham-box-item.highlight {
+    text-align: center;
+    align-items: center;
+  }
+
+  .muhurtham-box-item.highlight .m-box-label {
+    justify-content: center;
+  }
+
+  .muhurtham-box-sep {
+    width: 100%;
+    height: 1px;
+  }
+
+  .venue-card-actions.dual-actions {
+    flex-direction: column;
+  }
+
+  .venue-card-actions.dual-actions .royal-btn-action {
+    width: 100%;
+  }
+}
+
+.tvm-badge {
+  background: rgba(22, 60, 95, 0.92);
+  backdrop-filter: blur(8px);
+  color: #ffd56b;
+  border: 1.2px solid rgba(212, 175, 55, 0.6);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+/* ROUTE NAVIGATOR & LIVE INTERACTIVE MAP WRAPPER (Flattened, no nested card) */
+.route-navigator-wrapper {
+  width: 100%;
+  margin-top: 2.2rem;
+  padding-top: 2rem;
+  border-top: 1.5px dashed rgba(184, 134, 11, 0.35);
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  position: relative;
+}
+
+.route-navigator-header {
+  text-align: center;
+  margin-bottom: 1.4rem;
+}
+
+.route-navigator-title {
+  font-family: var(--font-royal);
+  font-size: clamp(1.3rem, 2.8vw, 1.85rem);
+  font-weight: 800;
+  color: #163624;
+  margin: 0.4rem 0 0.25rem;
+  letter-spacing: 0.5px;
+}
+
+.route-navigator-subtitle {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: #355d47;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Route Selector Tabs - Sleek Segmented Control */
+.route-tabs-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  margin: 0 auto 1.4rem;
+  padding: 0.35rem;
+  background: rgba(22, 54, 36, 0.05);
+  border: 1px solid rgba(184, 134, 11, 0.25);
+  border-radius: 50px;
+  max-width: 100%;
+}
+
+.route-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.8rem;
+  min-height: 31px;
+  border-radius: 50px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #173827;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.route-tab-btn .tab-chip {
+  padding: 0.12rem 0.5rem;
+  border-radius: 50px;
+  background: rgba(184, 134, 11, 0.15);
+  font-size: 0.65rem;
+  color: #7a5406;
+  font-weight: 700;
+}
+
+.route-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.7);
+  color: #163624;
+}
+
+.route-tab-btn.active {
+  background: linear-gradient(135deg, #163624 0%, #25583b 100%);
+  border-color: #ffd56b;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(22, 54, 36, 0.2);
+}
+
+.route-tab-btn.active .tab-chip {
+  background: #ffd56b;
+  color: #163624;
+  font-weight: 800;
+}
+
+/* Route Live Panel - Cohesive Navigation Console */
+.route-live-panel {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdfb 100%);
+  border: 1.5px solid rgba(184, 134, 11, 0.3);
+  border-radius: 20px;
+  padding: 1.4rem;
+  box-shadow: 0 8px 24px rgba(22, 54, 36, 0.05);
+}
+
+.route-live-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid rgba(184, 134, 11, 0.2);
+  margin-bottom: 1.1rem;
+}
+
+.route-title-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-royal);
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: #163624;
+}
+
+.route-title-badge i {
+  color: #b8860b;
+}
+
+.route-calc-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #2e6d4c;
+  background: rgba(46, 109, 76, 0.08);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  border: 1px solid rgba(46, 109, 76, 0.2);
+}
+
+.live-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #28a745;
+  box-shadow: 0 0 8px #28a745;
+  animation: livePulse 1.8s infinite;
+}
+
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* Stats Highlight Grid - Streamlined 3-Column Bar */
+.route-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.2rem;
+}
+
+.route-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.95rem;
+  border-radius: 12px;
+  background: #f7fbf7;
+  border: 1px solid rgba(184, 134, 11, 0.22);
+}
+
+.route-stat-card .stat-icon-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #163624 0%, #25583b 100%);
+  color: #ffd56b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+
+.route-stat-card .stat-icon-wrap.time {
+  background: linear-gradient(135deg, #7a5406 0%, #b8860b 100%);
+  color: #ffffff;
+}
+
+.route-stat-card .stat-icon-wrap.map-pins {
+  background: linear-gradient(135deg, #194663 0%, #205c82 100%);
+  color: #ffd56b;
+}
+
+.route-stat-card .stat-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.route-stat-card .stat-number {
+  font-family: var(--font-royal);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #163624;
+  line-height: 1.1;
+}
+
+.route-stat-card .stat-unit {
+  font-family: var(--font-royal);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #7a5406;
+  margin-left: 2px;
+}
+
+.route-stat-card .stat-label {
+  font-size: 0.7rem;
+  color: #557964;
+  font-weight: 600;
+  margin-top: 1px;
+}
+
+/* Journey Stepper - Perfect Horizontal Alignment (No staircase wrapping) */
+.journey-stepper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.8rem 0.65rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f9fbf9 100%);
+  border: 1px solid rgba(184, 134, 11, 0.22);
+  border-radius: 14px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(22, 54, 36, 0.03);
+}
+
+.step-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1 1 0;
+  min-width: 0;
+  gap: 0.35rem;
+  transition: all 0.3s ease;
+}
+
+.step-node .step-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #e2ede2;
+  color: #163624;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  border: 1px solid rgba(184, 134, 11, 0.25);
+  transition: all 0.3s ease;
+}
+
+.step-node.active .step-num {
+  background: linear-gradient(135deg, #dfb74c 0%, #b8860b 100%);
+  color: #ffffff;
+  border-color: #ffd56b;
+  box-shadow: 0 0 8px rgba(184, 134, 11, 0.45);
+}
+
+.step-node .step-label {
+  font-family: var(--font-royal);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #557964;
+  letter-spacing: 0.3px;
+  line-height: 1.25;
+  text-transform: uppercase;
+  word-break: break-word;
+}
+
+.step-node.active .step-label {
+  color: #163624;
+}
+
+.step-line {
+  flex: 0 0 22px;
+  height: 2px;
+  background: #d4e2d4;
+  margin-top: 11px;
+  border-radius: 2px;
+}
+
+.step-line.active {
+  background: linear-gradient(90deg, #b8860b, #28a745);
+}
+
+/* Interactive Map Frame */
+.interactive-map-frame {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1.5px solid rgba(184, 134, 11, 0.35);
+  box-shadow: 0 6px 20px rgba(22, 54, 36, 0.08);
+  margin-bottom: 1.2rem;
+}
+
+.interactive-wedding-map {
+  background: #eef3ee;
+}
+
+/* Map Legend Overlay */
+.map-legend-overlay {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(184, 134, 11, 0.35);
+  border-radius: 8px;
+  padding: 0.4rem 0.7rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #163624;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.legend-dot.home { background: #2e6d4c; box-shadow: 0 0 6px #2e6d4c; }
+.legend-dot.tvm { background: #b8860b; box-shadow: 0 0 6px #b8860b; }
+.legend-dot.hall { background: #8a2434; box-shadow: 0 0 6px #8a2434; }
+
+/* Route Action Buttons - Compact, Small Size Buttons */
+.route-action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+.route-action-buttons .royal-btn-action {
+  flex: 0 1 auto;
+  min-height: 33px;
+  padding: 0.36rem 0.95rem;
+  border-radius: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.route-action-buttons .royal-btn-action i {
+  font-size: 0.8rem;
+}
+
+.route-action-buttons .royal-btn-action.btn-edit-toggle {
+  min-height: 30px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.72rem;
+  background: #f7fbf7;
+  color: #557964;
+  border: 1px dashed rgba(184, 134, 11, 0.4);
+}
+
+.route-action-buttons .royal-btn-action.btn-edit-toggle:hover {
+  background: #ffffff;
+  color: #163624;
+  border-color: #b8860b;
+}
+
+.royal-btn-action.ghost {
+  background: #f7fbf7;
+  color: #163624;
+  border: 1.5px solid rgba(184, 134, 11, 0.4);
+  box-shadow: 0 3px 10px rgba(22, 54, 36, 0.05);
+}
+
+.royal-btn-action.ghost:hover {
+  background: #ffffff;
+  border-color: #b8860b;
+  color: #7a5406;
+}
+
+/* Address Editor Drawer */
+.address-editor-drawer {
+  margin-top: 1.6rem;
+  padding: 1.6rem;
+  background: #f8fbf8;
+  border-radius: 16px;
+  border: 1.5px dashed rgba(184, 134, 11, 0.45);
+  animation: fadeInEditor 0.3s ease;
+}
+
+@keyframes fadeInEditor {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.editor-header h4 {
+  font-family: var(--font-royal);
+  font-size: 1.1rem;
+  color: #163624;
+  margin-bottom: 0.3rem;
+}
+
+.editor-header p {
+  font-size: 0.85rem;
+  color: #4f735e;
+  margin-bottom: 1.2rem;
+}
+
+.editor-fields-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+@media (max-width: 820px) {
+  .editor-fields-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.editor-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-align: left;
+}
+
+.editor-field label {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #173827;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.editor-field label i {
+  color: #b8860b;
+}
+
+.editor-field input {
+  padding: 0.65rem 0.9rem;
+  border-radius: 10px;
+  border: 1.5px solid rgba(184, 134, 11, 0.35);
+  background: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  color: #163624;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.editor-field input:focus {
+  outline: none;
+  border-color: #b8860b;
+  box-shadow: 0 0 10px rgba(184, 134, 11, 0.25);
+}
+
+.editor-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.editor-actions .royal-btn-action {
+  min-height: 31px;
+  padding: 0.32rem 0.85rem;
+  font-size: 0.74rem;
+}
+
+.editor-feedback-msg {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: none;
+}
+
+.editor-feedback-msg.success {
+  color: #28a745;
+  display: block;
+}
+
+.editor-feedback-msg.error {
+  color: #dc3545;
+  display: block;
+}
+
+/* Custom Leaflet Map Markers */
+.custom-wedding-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 1.1rem;
+  border: 2.5px solid #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35), 0 0 10px rgba(212, 175, 55, 0.5);
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.custom-wedding-marker:hover {
+  transform: scale(1.15);
+}
+
+.custom-wedding-marker.home {
+  background: radial-gradient(circle, #2e6d4c 0%, #163624 100%);
+}
+
+.custom-wedding-marker.tvm {
+  background: radial-gradient(circle, #dfb74c 0%, #996e08 100%);
+}
+
+.custom-wedding-marker.hall {
+  background: radial-gradient(circle, #8a2434 0%, #54111c 100%);
+}
+
+/* Responsive Venues Section for Mobile */
+@media (max-width: 680px) {
+  .venues-main-card {
+    padding: 1.8rem 1rem 1.6rem;
+    border-radius: 20px;
+  }
+
+  .venues-title {
+    font-size: 1.85rem;
+  }
+
+  .venue-photo-wrap {
+    height: 200px;
+  }
+
+  .venue-details-body {
+    padding: 1.2rem 1rem 1.1rem;
+  }
+
+  .venue-name {
+    font-size: 1.35rem;
+  }
+
+  .route-navigator-wrapper {
+    margin-top: 1.8rem;
+    padding-top: 1.4rem;
+  }
+
+  .route-live-panel {
+    padding: 1rem 0.8rem;
+    border-radius: 16px;
+  }
+
+  .route-tabs-bar {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 0.3rem 0.4rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .route-tabs-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .route-tab-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 0.45rem 0.85rem;
+    min-height: 34px;
+    font-size: 0.76rem;
+  }
+
+  .route-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+  }
+
+  .route-stat-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 0.6rem 0.3rem;
+    gap: 0.25rem;
+  }
+
+  .route-stat-card .stat-icon-wrap {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+
+  .route-stat-card .stat-info {
+    text-align: center;
+  }
+
+  .route-stat-card .stat-number {
+    font-size: 1rem;
+  }
+
+  .route-stat-card .stat-label {
+    font-size: 0.62rem;
+  }
+
+  .interactive-wedding-map {
+    height: 320px !important;
+  }
+
+  .journey-stepper {
+    padding: 0.65rem 0.4rem;
+  }
+
+  .step-node .step-num {
+    width: 22px;
+    height: 22px;
+    font-size: 0.68rem;
+  }
+
+  .step-line {
+    flex: 0 0 16px;
+    margin-top: 10px;
+  }
+
+  .step-node .step-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.2px;
+  }
+
+  .route-action-buttons {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .route-action-buttons .royal-btn-action {
+    width: 100%;
+    min-width: 0;
+    min-height: 38px;
+    padding: 0.45rem 0.4rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
+
+  .route-action-buttons .royal-btn-action i {
+    font-size: 0.82rem;
+    flex-shrink: 0;
+  }
+
+  .route-action-buttons .royal-btn-action span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .route-action-buttons .royal-btn-action.btn-edit-toggle {
+    grid-column: span 2;
+    width: auto;
+    justify-self: center;
+    min-height: 28px;
+    font-size: 0.72rem;
+    padding: 0.3rem 0.85rem;
+    margin-top: 0.2rem;
+  }
+}
+
+.hero-card-frame {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 2px solid rgba(184, 134, 11, 0.55);
+  box-shadow: 
+    0 20px 50px rgba(22, 54, 36, 0.16),
+    0 0 35px rgba(184, 134, 11, 0.18);
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f7f1;
+}
+
+/* UNTOUCHED 1st Image */
+.hero-wedding-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ==========================================================================
+   SECTION COMMONS
+   ========================================================================== */
+.section-wrapper {
+  padding: 0 1.2rem;
+  scroll-margin-top: 75px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-pretitle {
+  display: block;
+  font-family: var(--font-royal);
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  color: var(--gold-accent);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  background: var(--gold-text-clip);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.25;
+}
+
+@media (min-width: 600px) {
+  .section-title {
+    font-size: 2.25rem;
+  }
+}
+
+.section-desc {
+  max-width: 580px;
+  margin: 0.65rem auto 0;
+  font-size: 0.92rem;
+  color: #dfcdb9;
+}
+
+.gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0.6rem auto 0;
+  width: 180px;
+}
+
+.gold-divider span {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.7), transparent);
+}
+
+.gold-divider i {
+  color: var(--gold-accent);
+  font-size: 0.75rem;
+}
+
+/* Buttons */
+.royal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 50px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+}
+
+.royal-btn.primary {
+  background: var(--gold-gradient);
+  color: #170803;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.38);
+}
+
+.royal-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 22px rgba(212, 175, 55, 0.55);
+}
+
+.royal-btn.secondary {
+  background: rgba(45, 20, 10, 0.85);
+  border-color: rgba(212, 175, 55, 0.45);
+  color: var(--gold-light);
+}
+
+.royal-btn.secondary:hover {
+  background: rgba(60, 27, 13, 0.95);
+  border-color: var(--gold-bright);
+}
+
+.royal-btn.outline {
+  background: transparent;
+  border-color: rgba(212, 175, 55, 0.35);
+  color: var(--gold-light);
+}
+
+.royal-btn.outline:hover {
+  border-color: var(--gold-bright);
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.royal-btn.full-width {
+  width: 100%;
+}
+
+/* ==========================================================================
+   SECTION 2: TRADITIONAL VEDIC INVITATION CARD
+   ========================================================================== */
+.invitation-card-section {
+  display: flex;
+  justify-content: center;
+}
+
+.royal-card {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  background: radial-gradient(circle at 50% 15%, #301408 0%, #1c0a04 70%, #120602 100%);
+  border: 1.8px solid rgba(212, 175, 55, 0.6);
+  border-radius: 24px;
+  padding: 2.4rem 1.8rem;
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.95),
+    inset 0 0 40px rgba(0, 0, 0, 0.75),
+    0 0 35px rgba(212, 175, 55, 0.18);
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .royal-card {
+    padding: 3rem 2.8rem;
+  }
+}
+
+/* Ornate Corner Accents */
+.card-corner {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-color: var(--gold-bright);
+  border-style: solid;
+  pointer-events: none;
+}
+.card-corner.tl { top: 10px; left: 10px; border-width: 2.5px 0 0 2.5px; }
+.card-corner.tr { top: 10px; right: 10px; border-width: 2.5px 2.5px 0 0; }
+.card-corner.bl { bottom: 10px; left: 10px; border-width: 0 0 2.5px 2.5px; }
+.card-corner.br { bottom: 10px; right: 10px; border-width: 0 2.5px 2.5px 0; }
+
+.vedic-header {
+  margin-bottom: 1.5rem;
+}
+
+.sacred-mandala-svg {
+  filter: drop-shadow(0 0 12px rgba(242, 199, 92, 0.45));
+  animation: rotateSlow 45s linear infinite;
+}
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.shloka-text {
+  display: block;
+  font-family: var(--font-royal);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--gold-bright);
+  margin-top: 0.6rem;
+}
+
+.shloka-sub {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  color: #dfcdb9;
+  font-style: italic;
+  margin-top: 0.35rem;
+  letter-spacing: 0.5px;
+}
+
+.announcement-block {
+  margin: 1.2rem 0 1.6rem;
+}
+
+.blessing-lead {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-style: italic;
+  color: #f7e3c8;
+  line-height: 1.5;
+}
+
+.invitation-intro {
+  font-size: 0.88rem;
+  color: #cfbeab;
+  margin-top: 0.35rem;
+}
+
+/* Couple Spotlight */
+.couple-spotlight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.8rem 0;
+  padding: 1.5rem 1rem;
+  background: rgba(22, 9, 4, 0.65);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 18px;
+}
+
+@media (min-width: 640px) {
+  .couple-spotlight {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.couple-card {
+  flex: 1;
+}
+
+.role-tag {
+  display: inline-block;
+  font-family: var(--font-royal);
+  font-size: 0.68rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #170803;
+  background: var(--gold-gradient);
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+  margin-bottom: 0.4rem;
+}
+
+.name-display {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.parent-line {
+  font-size: 0.78rem;
+  color: #d8c4ae;
+  margin-top: 0.3rem;
+}
+
+.knot-motif {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.knot-symbol {
+  font-family: var(--font-script);
+  font-size: 2.4rem;
+  color: var(--gold-bright);
+  line-height: 1;
+}
+
+.knot-gold-heart {
+  font-size: 0.9rem;
+  color: #e0475b;
+  animation: pulseBeat 1.8s infinite;
+}
+
+@keyframes pulseBeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}
+
+.knot-sub {
+  font-family: var(--font-serif);
+  font-size: 0.72rem;
+  color: var(--gold-light);
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* Date Ribbon */
+.auspicious-date-ribbon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.ribbon-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
+}
+
+.ribbon-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(45, 18, 9, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+}
+
+.ribbon-icon {
+  color: var(--gold-bright);
+  font-size: 0.85rem;
+}
+
+.ribbon-date {
+  font-family: var(--font-royal);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--gold-light);
+}
+
+/* Quick Timing Grid */
+.quick-timing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  margin: 1.5rem 0;
+}
+
+@media (min-width: 540px) {
+  .quick-timing-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.timing-box {
+  background: rgba(22, 9, 4, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 14px;
+  padding: 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.timing-box:hover {
+  transform: translateY(-2px);
+  border-color: rgba(212, 175, 55, 0.55);
+}
+
+.timing-box.highlight {
+  border-color: rgba(212, 175, 55, 0.45);
+  background: rgba(38, 16, 7, 0.8);
+}
+
+.timing-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--gold-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  margin-bottom: 0.2rem;
+}
+
+.timing-box h4 {
+  font-family: var(--font-royal);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--gold-light);
+}
+
+.timing-box .time {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.timing-box .badge {
+  font-size: 0.68rem;
+  color: #dfcdb9;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+}
+
+.invitation-btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.8rem;
+}
+
+/* ==========================================================================
+   SECTION 3: LIVE WEDDING COUNTDOWN TIMER
+   ========================================================================== */
+.countdown-section {
+  text-align: center;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+@media (min-width: 500px) {
+  .countdown-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.countdown-card {
+  background: radial-gradient(circle at 50% 20%, #2f1409 0%, #1a0a05 100%);
+  border: 1.5px solid rgba(212, 175, 55, 0.35);
+  border-radius: 16px;
+  padding: 1.3rem 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.countdown-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-bright);
+}
+
+.countdown-card.highlight {
+  border-color: rgba(242, 199, 92, 0.6);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7), 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+.counter-number {
+  font-family: var(--font-royal);
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+
+.counter-label {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #d1beaa;
+  margin-top: 0.3rem;
+}
+
+.countdown-caption {
+  margin-top: 1.4rem;
+  font-size: 0.88rem;
+  color: #d8c5b0;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   SECTION 4: WEDDING CEREMONIES & EVENTS TIMELINE
+   ========================================================================== */
+.events-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.event-card {
+  position: relative;
+  background: rgba(26, 11, 5, 0.8);
+  border: 1.5px solid rgba(212, 175, 55, 0.3);
+  border-radius: 20px;
+  padding: 1.6rem 1.4rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(212, 175, 55, 0.6);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.12);
+}
+
+.event-card.featured {
+  border-color: rgba(212, 175, 55, 0.65);
+  background: radial-gradient(circle at 50% 10%, #35170a 0%, #1c0a04 100%);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.85), 0 0 25px rgba(212, 175, 55, 0.18);
+}
+
+.event-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-family: var(--font-royal);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.event-badge.gold-theme {
+  background: var(--gold-gradient);
+  color: #170803;
+}
+.event-badge.yellow-theme {
+  background: linear-gradient(135deg, #fcd34d, #f59e0b);
+  color: #170803;
+}
+.event-badge.green-theme {
+  background: linear-gradient(135deg, #34d399, #059669);
+  color: #fff;
+}
+.event-badge.purple-theme {
+  background: linear-gradient(135deg, #c084fc, #7c3aed);
+  color: #fff;
+}
+
+.featured-event-image-box {
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+.event-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.event-card:hover .event-banner-img {
+  transform: scale(1.03);
+}
+
+.banner-overlay-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.mandap-tag {
+  background: rgba(18, 7, 3, 0.85);
+  border: 1px solid var(--glass-border);
+  color: var(--gold-light);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.event-header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 0.85rem;
+}
+
+.event-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.event-icon-circle.gold {
+  background: rgba(212, 175, 55, 0.2);
+  color: var(--gold-bright);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+.event-icon-circle.yellow {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+}
+.event-icon-circle.green {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+}
+.event-icon-circle.purple {
+  background: rgba(139, 92, 246, 0.2);
+  color: #c084fc;
+}
+
+.event-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.25;
+}
+
+.event-day {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--gold-accent);
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+.event-description {
+  font-size: 0.9rem;
+  color: #dfcdb9;
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+.event-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  background: rgba(16, 7, 3, 0.5);
+  border-radius: 10px;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  font-size: 0.82rem;
+  color: #d1beaa;
+}
+
+.event-meta span i {
+  color: var(--gold-accent);
+  width: 16px;
+  margin-right: 0.35rem;
+}
+
+/* ==========================================================================
+   SECTION 5: OUR STORY / COUPLE JOURNEY
+   ========================================================================== */
+.story-journey-card {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.story-step {
+  display: flex;
+  gap: 1.2rem;
+  background: rgba(26, 11, 5, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 16px;
+  padding: 1.2rem;
+  transition: transform 0.25s;
+}
+
+.story-step:hover {
+  transform: translateX(4px);
+  border-color: rgba(212, 175, 55, 0.5);
+}
+
+.step-num {
+  font-family: var(--font-royal);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--gold-bright);
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-info h4 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 0.3rem;
+}
+
+.step-info p {
+  font-size: 0.88rem;
+  color: #d8c5b0;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   SECTION 6: MOMENTS & MEMORIES GALLERY
+   ========================================================================== */
+.gallery-mosaic {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+  .gallery-mosaic {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #190a05;
+  border: 1.5px solid rgba(212, 175, 55, 0.3);
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+  border-color: var(--gold-bright);
+}
+
+.gallery-item.large {
+  grid-column: span 2;
+  aspect-ratio: 16 / 10;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 7, 3, 0.6);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-overlay span {
+  font-family: var(--font-royal);
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  color: #fff;
+  background: rgba(35, 15, 7, 0.85);
+  border: 1px solid var(--gold-accent);
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+}
+
+.gallery-item.visual-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.visual-card.gold-art {
+  background: radial-gradient(circle, #381a0b 0%, #1f0d05 100%);
+}
+.visual-card.floral-art {
+  background: radial-gradient(circle, #3b190e 0%, #1e0b06 100%);
+}
+
+.gallery-art-icon {
+  font-size: 2rem;
+  color: var(--gold-bright);
+  margin-bottom: 0.5rem;
+}
+
+.visual-content h4 {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--gold-light);
+}
+
+.visual-content p {
+  font-size: 0.72rem;
+  color: #cfbeab;
+  margin-top: 0.2rem;
+}
+
+/* ==========================================================================
+   SECTION 7: VENUE & DIRECTIONS
+   ========================================================================== */
+.venue-card {
+  max-width: 760px;
+  margin: 0 auto;
+  background: rgba(26, 11, 5, 0.85);
+  border: 1.5px solid rgba(212, 175, 55, 0.4);
+  border-radius: 20px;
+  padding: 1.8rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 680px) {
+  .venue-card {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.venue-info-box {
+  flex: 1;
+}
+
+.venue-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: var(--gold-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.venue-title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.25;
+}
+
+.venue-subtitle {
+  font-size: 0.85rem;
+  color: var(--gold-accent);
+  font-weight: 600;
+  margin-bottom: 0.85rem;
+}
+
+.venue-address-block {
+  font-size: 0.85rem;
+  color: #dfcdb9;
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+}
+
+.venue-address-block p i {
+  color: var(--gold-accent);
+  margin-right: 0.35rem;
+}
+
+.venue-amenities {
+  margin-top: 0.4rem;
+  color: #c9b49e;
+  font-size: 0.78rem;
+}
+
+.venue-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.venue-map-preview {
+  flex: 1;
+  min-width: 260px;
+}
+
+.map-decorative-container {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1.5px solid rgba(212, 175, 55, 0.35);
+}
+
+.map-floating-pin {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(18, 7, 3, 0.9);
+  border: 1px solid var(--gold-accent);
+  color: var(--gold-light);
+  padding: 0.3rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* ==========================================================================
+   SECTION 8: WALL OF BLESSINGS & GUESTBOOK
+   ========================================================================== */
+.wishes-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.4rem;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+@media (min-width: 720px) {
+  .wishes-layout {
+    grid-template-columns: 1fr 1.2fr;
+  }
+}
+
+.wishes-form-card, .wishes-feed-card {
+  background: rgba(26, 11, 5, 0.85);
+  border: 1.5px solid rgba(212, 175, 55, 0.3);
+  border-radius: 20px;
+  padding: 1.6rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+}
+
+.wishes-form-card h4, .feed-header h4 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--gold-light);
+  margin-bottom: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.wishes-form-card h4 i {
+  color: var(--gold-bright);
+}
+
+.feed-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.1rem;
+}
+
+.live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+}
+
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34d399;
+  animation: pulseDot 1.5s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  margin-bottom: 0.35rem;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+  width: 100%;
+  background: rgba(14, 5, 2, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 10px;
+  padding: 0.65rem 0.85rem;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+  border-color: var(--gold-bright);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.wishes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 0.3rem;
+}
+
+.wishes-list::-webkit-scrollbar {
+  width: 4px;
+}
+.wishes-list::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.4);
+  border-radius: 4px;
+}
+
+.wish-item {
+  background: rgba(18, 7, 3, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  transition: transform 0.2s;
+}
+
+.wish-item:hover {
+  transform: translateX(2px);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.wish-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+.wish-sender {
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--gold-light);
+}
+
+.wish-time {
+  font-size: 0.68rem;
+  color: #a8947f;
+}
+
+.wish-attendance-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  color: #fce79c;
+  background: rgba(212, 175, 55, 0.15);
+  padding: 0.1rem 0.45rem;
+  border-radius: 10px;
+  margin-bottom: 0.35rem;
+}
+
+.wish-body {
+  font-size: 0.84rem;
+  color: #dfcdb9;
+  line-height: 1.45;
+  font-style: italic;
+}
+
+.wish-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.35rem;
+}
+
+.wish-like-btn {
+  background: transparent;
+  border: none;
+  color: #e0475b;
+  font-size: 0.78rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.4rem;
+  transition: transform 0.15s;
+}
+
+.wish-like-btn:active {
+  transform: scale(1.2);
+}
+
+/* ==========================================================================
+   SIMPLE ROYAL WEDDING FOOTER (RICH ROYAL EMERALD & RADIANT GOLD)
+   ========================================================================== */
+.wedding-simple-footer {
+  width: 100%;
+  text-align: center;
+  padding: 3.2rem 1.4rem 2.8rem;
+  border-top: 2.5px solid #dfb74c;
+  margin-top: 2.5rem;
+  background: linear-gradient(180deg, #163624 0%, #10291b 60%, #0a1b12 100%);
+  position: relative;
+  z-index: 10;
+  box-shadow: 
+    0 -12px 35px rgba(22, 54, 36, 0.25),
+    inset 0 1px 0 rgba(255, 226, 138, 0.35);
+}
+
+.footer-simple-container {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-simple-motif {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  width: 100%;
+  max-width: 240px;
+  margin-bottom: 1.2rem;
+}
+
+.footer-simple-motif .motif-line {
+  flex: 1;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, rgba(255, 213, 107, 0.65), transparent);
+}
+
+.footer-simple-motif .motif-crest {
+  color: #ffd56b;
+  font-size: 1.05rem;
+  filter: drop-shadow(0 2px 8px rgba(255, 213, 107, 0.45));
+}
+
+.footer-simple-names {
+  font-family: var(--font-royal);
+  font-size: clamp(1.3rem, 3vw, 1.75rem);
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #ffffff 0%, #ffd976 50%, #dfa92a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.4rem;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+}
+
+.footer-simple-date {
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #ffd56b;
+  letter-spacing: 0.8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer-simple-date i {
+  color: #ffd56b;
+  filter: drop-shadow(0 0 6px rgba(255, 213, 107, 0.5));
+}
+
+.footer-simple-blessing {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #d6e8dc;
+  line-height: 1.6;
+  margin: 0 auto 1.3rem;
+  max-width: 480px;
+  opacity: 0.95;
+}
+
+/* Creator Credit Pill */
+.footer-simple-credit {
+  margin: 0.4rem auto 0.9rem;
+}
+
+.footer-simple-credit .credit-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.42rem 1.15rem;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255, 213, 107, 0.55);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.25),
+    0 0 12px rgba(255, 213, 107, 0.15);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: #ffffff;
+  transition: all 0.25s ease;
+}
+
+.footer-simple-credit .credit-badge:hover {
+  transform: translateY(-2px) scale(1.03);
+  background: rgba(255, 255, 255, 0.18);
+  border-color: #ffd56b;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35), 0 0 18px rgba(255, 213, 107, 0.4);
+}
+
+.footer-simple-credit .credit-heart {
+  color: #ff4d6d;
+  font-size: 0.82rem;
+  filter: drop-shadow(0 0 6px rgba(255, 77, 109, 0.6));
+  animation: pulseBeat 1.8s infinite;
+}
+
+.footer-simple-credit .creator-names {
+  color: #ffd56b;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.footer-simple-copy {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  color: #8bb298;
+  margin-top: 0.5rem;
+  letter-spacing: 0.4px;
+}
+
+/* ==========================================================================
+   MODALS & LIGHTBOX
+   ========================================================================== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 4, 1, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-backdrop.active {
+  display: flex;
+}
+
+.modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background: radial-gradient(circle at 50% 10%, #35170a 0%, #1c0a04 100%);
+  border: 1.5px solid rgba(212, 175, 55, 0.6);
+  border-radius: 20px;
+  padding: 2rem 1.6rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+  text-align: center;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  color: var(--gold-light);
+  font-size: 1.8rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-title-area {
+  margin-bottom: 1.2rem;
+}
+
+.modal-title-area .gold-sub {
+  font-family: var(--font-royal);
+  font-size: 0.68rem;
+  letter-spacing: 2px;
+  color: var(--gold-accent);
+}
+
+.modal-title-area h3 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: #fff;
+  margin: 0.25rem 0;
+}
+
+.modal-title-area p {
+  font-size: 0.78rem;
+  color: #cfbeab;
+}
+
+.success-box {
+  display: none;
+  padding: 1.5rem 0;
+}
+
+.success-box.active {
+  display: block;
+}
+
+.success-heart {
+  font-size: 2.5rem;
+  color: #34d399;
+  margin-bottom: 0.6rem;
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 2, 1, 0.92);
+  z-index: 220;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.lightbox-modal.active {
+  display: flex;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.2rem;
+  cursor: pointer;
+}
+
+#lightboxImg {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 1.5px solid rgba(212, 175, 55, 0.6);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.95);
+}
+
+.lightbox-caption {
+  font-family: var(--font-royal);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: var(--gold-light);
+  margin-top: 0.75rem;
+}
+
+/* Toast Bubble */
+.toast-bubble {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: rgba(26, 11, 5, 0.94);
+  border: 1px solid var(--gold-bright);
+  color: var(--gold-light);
+  padding: 0.65rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 300;
+  opacity: 0;
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+}
+
+.toast-bubble.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.toast-bubble i {
+  color: var(--gold-bright);
+}
+
+/* ==========================================================================
+   FLOATING SIDE LOCATION QUICK ACTION BUTTON
+   ========================================================================== */
+.floating-side-location-btn {
+  position: fixed;
+  right: 18px;
+  bottom: 24px;
+  z-index: 150;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  padding: 0.36rem 0.78rem;
+  min-height: 32px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #163624 0%, #204b33 100%);
+  border: 1.5px solid #ffd56b;
+  color: #ffffff;
+  text-decoration: none;
+  box-shadow: 
+    0 4px 16px rgba(22, 54, 36, 0.35),
+    0 0 12px rgba(212, 175, 55, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.floating-side-location-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 
+    0 8px 22px rgba(22, 54, 36, 0.45),
+    0 0 18px rgba(212, 175, 55, 0.55);
+  color: #ffd56b;
+  border-color: #ffffff;
+}
+
+.side-loc-pulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50px;
+  border: 1.5px solid #ffd56b;
+  opacity: 0;
+  pointer-events: none;
+  animation: sideLocRadarPulse 2.4s ease-out infinite;
+}
+
+@keyframes sideLocRadarPulse {
+  0% { transform: scale(0.95); opacity: 0.85; }
+  50% { opacity: 0.35; }
+  100% { transform: scale(1.18); opacity: 0; }
+}
+
+.side-loc-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffd56b;
+  font-size: 0.8rem;
+}
+
+.side-loc-text {
+  font-family: var(--font-royal);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+/* Subtle Golden Glow Pulse when scrolled to Venues */
+@keyframes venuesPulseHighlight {
+  0% { box-shadow: 0 0 0 rgba(212, 175, 55, 0); }
+  50% { box-shadow: 0 0 45px rgba(212, 175, 55, 0.55), 0 0 20px rgba(46, 109, 76, 0.3); }
+  100% { box-shadow: 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+.venues-highlight-glow .venues-main-card {
+  animation: venuesPulseHighlight 2.2s ease;
+}
+
+@media (max-width: 680px) {
+  .floating-side-location-btn {
+    right: 12px;
+    bottom: 18px;
+    padding: 0.3rem 0.65rem;
+    min-height: 29px;
+    gap: 0.3rem;
+  }
+
+  .side-loc-icon {
+    font-size: 0.75rem;
+  }
+
+  .side-loc-text {
+    font-size: 0.62rem;
+    letter-spacing: 0.6px;
+  }
+}
+
+/* ==========================================================================
+   ROMANTIC FLYING BIRD WITH COUPLE PHOTO KEYCHAIN ANIMATION
+   Purushothaman & Kanchana • 11.11.2026
+   ========================================================================== */
+
+/* ==========================================================================
+   ROMANTIC FLYING BIRDS ANIMATION (SEPARATE BIRDS: PHOTO & DATE)
+   Purushothaman & Kanchana • 11.11.2026
+   ========================================================================== */
+
+/* Fullscreen Transparent Decorative Overlay */
+.romantic-flight-scene {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 120;
+  overflow: hidden;
+}
+
+/* Base Assembly for Flying Birds */
+.flying-bird-assembly {
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* --------------------------------------------------------------------------
+   BIRD 1: CARRIES THE COUPLE PHOTO KEYCHAIN
+   -------------------------------------------------------------------------- */
+.flying-bird-assembly.bird-photo {
+  top: 15vh;
+  width: 140px;
+  height: 180px;
+  /* 8s loop: Fly in 1.6s -> Stand stable in center for 3.0s -> Fly out 1.4s -> Pause offscreen 2.0s */
+  animation: romanticFlightPathPhoto 8s cubic-bezier(0.35, 0.05, 0.25, 1) infinite;
+}
+
+/* Flight Path for Photo Bird: Enters from Right, Stands Stable in Center for 3s, Exits Left */
+@keyframes romanticFlightPathPhoto {
+  0% {
+    transform: translate3d(105vw, 0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  /* 1.6s: Arrive at Center-Left of Screen */
+  20% {
+    transform: translate3d(calc(50vw - 110px), 0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  /* 20% to 57.5% = EXACTLY 3.0 SECONDS STABLE STAND IN THE CENTER */
+  27% {
+    transform: translate3d(calc(50vw - 110px), -4px, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  35% {
+    transform: translate3d(calc(50vw - 110px), 2px, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  43% {
+    transform: translate3d(calc(50vw - 110px), -3px, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  50% {
+    transform: translate3d(calc(50vw - 110px), 2px, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  /* 4.6s (End of 3s stable stand): Begin flying off */
+  57.5% {
+    transform: translate3d(calc(50vw - 110px), 0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  /* 6.0s: Exit completely past left screen edge */
+  75% {
+    transform: translate3d(-260px, -1vh, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  75.01% {
+    /* Instantly hide and reset to right side */
+    transform: translate3d(105vw, 0, 0);
+    opacity: 0;
+    visibility: hidden;
+  }
+  99.99% {
+    /* Off-screen rest for 2 seconds */
+    transform: translate3d(105vw, 0, 0);
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    transform: translate3d(105vw, 0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   BIRD 2: COMPANION DOVE CARRYING THE WEDDING DATE BANNER
+   -------------------------------------------------------------------------- */
+.flying-bird-assembly.bird-date {
+  top: 6.5vh; /* Flies higher & side-by-side with Bird 1 */
+  width: 160px;
+  height: 160px;
+  /* Synchronized 8s loop with 3.0s stable stand in center */
+  animation: romanticFlightPathDate 8s cubic-bezier(0.35, 0.05, 0.25, 1) infinite;
+}
+
+/* Flight Path for Date Bird: Enters from Right, Stands Stable in Center for 3s, Exits Left */
+@keyframes romanticFlightPathDate {
+  0% {
+    transform: translate3d(calc(105vw + 120px), 0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  /* 1.6s: Arrive at Center-Right of Screen (Framing center next to Photo Bird) */
+  20% {
+    transform: translate3d(calc(50vw + 25px), 0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  /* 20% to 57.5% = EXACTLY 3.0 SECONDS STABLE STAND IN THE CENTER */
+  27% {
+    transform: translate3d(calc(50vw + 25px), -3px, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  35% {
+    transform: translate3d(calc(50vw + 25px), 3px, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  43% {
+    transform: translate3d(calc(50vw + 25px), -2px, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  50% {
+    transform: translate3d(calc(50vw + 25px), 2px, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  /* 4.6s (End of 3s stable stand): Begin flying off */
+  57.5% {
+    transform: translate3d(calc(50vw + 25px), 0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  /* 6.0s: Exit completely past left screen edge */
+  75% {
+    transform: translate3d(-260px, -0.5vh, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  75.01% {
+    transform: translate3d(calc(105vw + 120px), 0, 0);
+    opacity: 0;
+    visibility: hidden;
+  }
+  99.99% {
+    transform: translate3d(calc(105vw + 120px), 0, 0);
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    transform: translate3d(calc(105vw + 120px), 0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Dove SVG Styling */
+.dove-svg {
+  width: 95px;
+  height: 60px;
+  overflow: visible;
+  filter: drop-shadow(0 6px 12px rgba(22, 54, 36, 0.18));
+}
+
+/* Articulated Near Wing Flap Animation */
+.dove-near-wing {
+  transform-origin: 46px 31px;
+  animation: nearWingFlap 0.24s ease-in-out infinite alternate;
+}
+
+@keyframes nearWingFlap {
+  0% {
+    transform: rotate(26deg) scaleY(0.85);
+  }
+  100% {
+    transform: rotate(-34deg) scaleY(1.1);
+  }
+}
+
+/* Articulated Far Wing Flap Animation */
+.dove-far-wing {
+  transform-origin: 52px 30px;
+  animation: farWingFlap 0.24s ease-in-out infinite alternate;
+}
+
+@keyframes farWingFlap {
+  0% {
+    transform: rotate(18deg) scaleY(0.9);
+  }
+  100% {
+    transform: rotate(-28deg) scaleY(1.05);
+  }
+}
+
+/* Keychain Pendulum Unit (Hanging from Photo Dove's Beak) */
+.keychain-pendulum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -16px;
+  margin-left: -58px; /* Aligns precisely with dove's beak clasp ring */
+  transform-origin: top center;
+  /* Aerodynamic tilt while flying, settles stable & vertical during 3s center stand */
+  animation: keychainAerodynamicSway 8s cubic-bezier(0.35, 0.05, 0.25, 1) infinite;
+}
+
+@keyframes keychainAerodynamicSway {
+  0% {
+    transform: rotate(14deg);
+  }
+  18% {
+    transform: rotate(14deg);
+  }
+  24% {
+    transform: rotate(1deg); /* Quickly stabilizes as bird lands in center */
+  }
+  35% {
+    transform: rotate(-1deg);
+  }
+  45% {
+    transform: rotate(1deg);
+  }
+  56% {
+    transform: rotate(0deg); /* Stable during hover */
+  }
+  62% {
+    transform: rotate(15deg); /* Tilts backward as bird flies out */
+  }
+  75% {
+    transform: rotate(15deg);
+  }
+  75.01% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Date Banner Pendulum Unit (Hanging from Date Dove's Beak) */
+.date-banner-pendulum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -16px;
+  margin-left: -58px;
+  transform-origin: top center;
+  /* Aerodynamic tilt while flying, settles stable & vertical during 3s center stand */
+  animation: dateAerodynamicSway 8s cubic-bezier(0.35, 0.05, 0.25, 1) infinite;
+}
+
+@keyframes dateAerodynamicSway {
+  0% {
+    transform: rotate(13deg);
+  }
+  18% {
+    transform: rotate(13deg);
+  }
+  24% {
+    transform: rotate(0.5deg); /* Quickly stabilizes as bird lands in center */
+  }
+  35% {
+    transform: rotate(-0.5deg);
+  }
+  45% {
+    transform: rotate(0.5deg);
+  }
+  56% {
+    transform: rotate(0deg); /* Stable during hover */
+  }
+  62% {
+    transform: rotate(14deg); /* Tilts backward as bird flies out */
+  }
+  75% {
+    transform: rotate(14deg);
+  }
+  75.01% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Golden Chain Links */
+.gold-chain-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5px;
+  margin-bottom: -2px;
+}
+
+.chain-link {
+  width: 4.5px;
+  height: 7.5px;
+  border-radius: 4px;
+  border: 1.5px solid #dfb74c;
+  background: linear-gradient(135deg, #ffe28a 0%, #b8860b 100%);
+  box-shadow: 0 1px 3px rgba(184, 134, 11, 0.4);
+}
+
+/* Premium Gold Photo Keychain Frame */
+.gold-locket-frame {
+  position: relative;
+  width: 58px;
+  height: 64px;
+  border-radius: 50% 50% 48% 48% / 55% 55% 45% 45%;
+  background: linear-gradient(135deg, #fae08c 0%, #d4a737 40%, #8c630d 80%, #ffd976 100%);
+  padding: 3.5px;
+  box-shadow: 
+    0 8px 20px rgba(22, 54, 36, 0.25),
+    0 0 16px rgba(212, 175, 55, 0.5),
+    inset 0 0 4px rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Inner Couple Photo Window */
+.locket-photo-window {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50% 50% 48% 48% / 55% 55% 45% 45%;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1.5px solid #fff2c4;
+}
+
+/* Couple Photo inside Keychain (Purushothaman & Kanchana) */
+.locket-couple-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Precisely centers Purushothaman & Kanchana's faces from hero-image.jpg */
+  object-position: 50% 16%;
+  display: block;
+}
+
+/* Glass Sheen Reflection */
+.locket-glass-glint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.1) 45%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Dangling Gold Heart Charm under photo frame */
+.locket-bottom-charm {
+  position: absolute;
+  bottom: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #dfb74c;
+  font-size: 10px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+  animation: charmPulse 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes charmPulse {
+  0% { transform: translateX(-50%) scale(0.9); }
+  100% { transform: translateX(-50%) scale(1.15); }
+}
+
+/* --------------------------------------------------------------------------
+   ROYAL WEDDING DATE BANNER CARD (Carried by Bird 2)
+   -------------------------------------------------------------------------- */
+.royal-date-banner-card {
+  position: relative;
+  background: linear-gradient(135deg, #fffdf8 0%, #faecd5 50%, #f6deb3 100%);
+  border: 1.5px solid #dfb74c;
+  border-radius: 10px;
+  padding: 4px 11px 5px;
+  box-shadow: 
+    0 6px 18px rgba(22, 54, 36, 0.22),
+    0 0 12px rgba(212, 175, 55, 0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.date-banner-tag {
+  font-family: var(--font-royal);
+  font-size: 7.5px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: #926410;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.date-banner-val {
+  font-family: var(--font-royal);
+  font-size: 13.5px;
+  font-weight: 900;
+  color: #12331f;
+  letter-spacing: 0.8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  line-height: 1.2;
+  margin: 1px 0;
+}
+
+.date-dot {
+  color: #c99321;
+  font-size: 9px;
+}
+
+.date-banner-sub {
+  font-family: var(--font-body);
+  font-size: 7px;
+  font-weight: 700;
+  color: #556b5a;
+  letter-spacing: 0.4px;
+  line-height: 1;
+}
+
+.date-card-sparkle {
+  position: absolute;
+  color: #dfb74c;
+  font-size: 8px;
+  pointer-events: none;
+  animation: sparkleTwinkle 0.8s ease-in-out infinite alternate;
+}
+
+.date-card-sparkle.sp-1 {
+  top: -5px;
+  left: -4px;
+  animation-delay: 0.2s;
+}
+
+.date-card-sparkle.sp-2 {
+  bottom: -5px;
+  right: -4px;
+  animation-delay: 0.5s;
+}
+
+/* Golden Sparkle Particles on Photo Locket */
+.locket-sparkle {
+  position: absolute;
+  color: #ffe699;
+  font-size: 11px;
+  pointer-events: none;
+  filter: drop-shadow(0 0 5px rgba(255, 215, 100, 0.8));
+  animation: sparkleTwinkle 0.8s ease-in-out infinite alternate;
+}
+
+.locket-sparkle.sp-1 {
+  top: -6px;
+  right: -4px;
+  animation-delay: 0s;
+}
+
+.locket-sparkle.sp-2 {
+  bottom: 8px;
+  left: -8px;
+  font-size: 9px;
+  animation-delay: 0.3s;
+}
+
+.locket-sparkle.sp-3 {
+  top: 18px;
+  right: -10px;
+  font-size: 13px;
+  animation-delay: 0.6s;
+}
+
+@keyframes sparkleTwinkle {
+  0% {
+    transform: scale(0.6) rotate(0deg);
+    opacity: 0.35;
+  }
+  100% {
+    transform: scale(1.25) rotate(45deg);
+    opacity: 1;
+  }
+}
+
+/* Mobile Responsiveness for Flying Birds */
+@media (max-width: 680px) {
+  .flying-bird-assembly.bird-photo {
+    top: 10vh;
+    width: 110px;
+    height: 145px;
+    animation-name: romanticFlightPathPhotoMobile;
+  }
+
+  .flying-bird-assembly.bird-date {
+    top: 4vh;
+    width: 130px;
+    height: 135px;
+    animation-name: romanticFlightPathDateMobile;
+  }
+
+  @keyframes romanticFlightPathPhotoMobile {
+    0% {
+      transform: translate3d(105vw, 0, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    20% {
+      transform: translate3d(calc(50vw - 85px), 0, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    27% {
+      transform: translate3d(calc(50vw - 85px), -3px, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    35% {
+      transform: translate3d(calc(50vw - 85px), 2px, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    43% {
+      transform: translate3d(calc(50vw - 85px), -2px, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    50% {
+      transform: translate3d(calc(50vw - 85px), 2px, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    57.5% {
+      transform: translate3d(calc(50vw - 85px), 0, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    75% {
+      transform: translate3d(-200px, -1vh, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    75.01% {
+      transform: translate3d(105vw, 0, 0);
+      opacity: 0;
+      visibility: hidden;
+    }
+    99.99% {
+      transform: translate3d(105vw, 0, 0);
+      opacity: 0;
+      visibility: hidden;
+    }
+    100% {
+      transform: translate3d(105vw, 0, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @keyframes romanticFlightPathDateMobile {
+    0% {
+      transform: translate3d(calc(105vw + 80px), 0, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    20% {
+      transform: translate3d(calc(50vw + 8px), 0, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    27% {
+      transform: translate3d(calc(50vw + 8px), -2px, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    35% {
+      transform: translate3d(calc(50vw + 8px), 2px, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    43% {
+      transform: translate3d(calc(50vw + 8px), -2px, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    50% {
+      transform: translate3d(calc(50vw + 8px), 1px, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    57.5% {
+      transform: translate3d(calc(50vw + 8px), 0, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    75% {
+      transform: translate3d(-200px, -0.5vh, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    75.01% {
+      transform: translate3d(calc(105vw + 80px), 0, 0);
+      opacity: 0;
+      visibility: hidden;
+    }
+    99.99% {
+      transform: translate3d(calc(105vw + 80px), 0, 0);
+      opacity: 0;
+      visibility: hidden;
+    }
+    100% {
+      transform: translate3d(calc(105vw + 80px), 0, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .dove-svg {
+    width: 76px;
+    height: 48px;
+  }
+
+  .keychain-pendulum,
+  .date-banner-pendulum {
+    margin-top: -13px;
+    margin-left: -46px;
+  }
+
+  .chain-link {
+    width: 3.5px;
+    height: 6px;
+  }
+
+  .gold-locket-frame {
+    width: 48px;
+    height: 53px;
+    padding: 2.8px;
+  }
+
+  .royal-date-banner-card {
+    padding: 3px 8px 3.5px;
+    border-radius: 8px;
+  }
+
+  .date-banner-tag {
+    font-size: 6.5px;
+  }
+
+  .date-banner-val {
+    font-size: 11px;
+  }
+
+  .date-banner-sub {
+    font-size: 6px;
+  }
+}
+
+/* Accessibility: Respect Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  .romantic-flight-scene {
+    display: none !important;
+  }
+}

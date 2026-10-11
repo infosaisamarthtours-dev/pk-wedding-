@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="theme-color" content="#eef5ee">
+  <meta name="description" content="Wedding Invitation - Purushothaman & Kanchana">
+  <meta property="og:title" content="Purushothaman & Kanchana | Wedding Invitation">
+  <meta property="og:description" content="Save The Date - Purushothaman & Kanchana | Wednesday, 11th November 2026">
+  <meta property="og:image" content="hero-image.jpg">
+  
+  <title>Purushothaman & Kanchana | Royal Wedding Invitation</title>
+  
+  <!-- Google Fonts: Luxury Serif, Script, Sans & Tamil -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Leaflet Interactive Maps CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Golden Sparkle & Petals Canvas -->
+  <canvas id="sparklesCanvas"></canvas>
+
+  <!-- =========================================================================
+       ROMANTIC FLYING BIRDS ANIMATION (SEPARATE BIRDS: PHOTO & DATE)
+       Purushothaman & Kanchana • 11.11.2026
+       ========================================================================= -->
+  <div class="romantic-flight-scene" id="romanticFlightScene" aria-hidden="true">
+    
+    <!-- Bird 1: Carries the Couple Photo Keychain -->
+    <div class="flying-bird-assembly bird-photo" aria-label="Dove carrying couple photo">
+      
+      <!-- Romantic White Dove SVG (Flying Right-to-Left) -->
+      <svg class="dove-svg" viewBox="0 0 120 75" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="doveBodyGradPhoto" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff"/>
+            <stop offset="65%" stop-color="#f6faf6"/>
+            <stop offset="100%" stop-color="#dce8dc"/>
+          </linearGradient>
+          <linearGradient id="doveWingGradPhoto" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff"/>
+            <stop offset="75%" stop-color="#eaf3ea"/>
+            <stop offset="100%" stop-color="#c6d9c6"/>
+          </linearGradient>
+          <linearGradient id="goldBeakGradPhoto" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffe28a"/>
+            <stop offset="50%" stop-color="#dfa92a"/>
+            <stop offset="100%" stop-color="#996e0c"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Far Wing (Behind Dove Body) -->
+        <g class="dove-far-wing">
+          <path d="M 50,30 C 54,14 66,2 80,0 C 76,10 70,22 58,32 Z" fill="url(#doveWingGradPhoto)" opacity="0.8"/>
+        </g>
+
+        <!-- Dove Tail Feathers (Trailing on Right) -->
+        <g class="dove-tail">
+          <path d="M 76,40 C 92,42 108,46 116,52 C 105,54 90,50 78,46 Z" fill="#ffffff"/>
+          <path d="M 74,42 C 90,47 104,54 112,60 C 100,59 88,52 76,47 Z" fill="#e4efe4"/>
+        </g>
+
+        <!-- Dove Body & Head (Facing Left) -->
+        <path class="dove-body" d="M 22,32 C 18,29 15,24 18,19 C 21,14 27,13 33,15 C 43,18 53,24 64,30 C 76,36 82,41 80,46 C 78,51 70,53 58,49 C 46,45 36,43 27,38 C 23,36 22,33 22,32 Z" fill="url(#doveBodyGradPhoto)"/>
+
+        <!-- Beak holding golden ring (at Left front) -->
+        <path d="M 17,19 L 6,22 L 16,25 Z" fill="url(#goldBeakGradPhoto)"/>
+        
+        <!-- Golden Clasp Ring held in Beak -->
+        <circle cx="8" cy="27" r="4" fill="none" stroke="url(#goldBeakGradPhoto)" stroke-width="2"/>
+
+        <!-- Cute Eye -->
+        <circle cx="22" cy="19" r="2" fill="#163624"/>
+        <circle cx="21.3" cy="18.3" r="0.7" fill="#ffffff"/>
+
+        <!-- Near Wing (Front of Body - Realistic Flap) -->
+        <g class="dove-near-wing">
+          <path d="M 44,31 C 38,12 46,-4 66,-6 C 62,6 56,20 46,32 Z" fill="url(#doveWingGradPhoto)"/>
+          <path d="M 48,31 C 46,16 54,2 70,0 C 66,12 60,23 51,33 Z" fill="#ffffff" opacity="0.95"/>
+          <path d="M 46,30 C 42,18 48,6 62,0" fill="none" stroke="#d2e4d2" stroke-width="0.8"/>
+        </g>
+      </svg>
+
+      <!-- Golden Chain & Swinging Photo Keychain Unit -->
+      <div class="keychain-pendulum">
+        
+        <!-- Golden Chain Links -->
+        <div class="gold-chain-track">
+          <span class="chain-link"></span>
+          <span class="chain-link"></span>
+          <span class="chain-link"></span>
+          <span class="chain-link"></span>
+        </div>
+
+        <!-- Premium Gold Photo Keychain Frame (Photo Only) -->
+        <div class="gold-locket-frame">
+          
+          <!-- Outer Gold Bezel -->
+          <div class="locket-gold-bezel"></div>
+          
+          <!-- Inner Couple Photo Window (Purushothaman & Kanchana) -->
+          <div class="locket-photo-window">
+            <img 
+              src="hero-image.jpg" 
+              alt="Purushothaman &amp; Kanchana - Wedding Couple Keychain" 
+              class="locket-couple-img"
+              loading="eager"
+            >
+            <!-- Crystal Glass Sheen Reflection -->
+            <div class="locket-glass-glint"></div>
+          </div>
+
+          <!-- Dangling Gold Heart Charm beneath the Photo Frame -->
+          <div class="locket-bottom-charm">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+
+          <!-- Sparkling Stars around the Keychain -->
+          <span class="locket-sparkle sp-1">✦</span>
+          <span class="locket-sparkle sp-2">✦</span>
+          <span class="locket-sparkle sp-3">✦</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bird 2: Companion Dove Carrying the Wedding Date Banner -->
+    <div class="flying-bird-assembly bird-date" aria-label="Dove carrying wedding date">
+      
+      <!-- Romantic Companion Dove SVG -->
+      <svg class="dove-svg" viewBox="0 0 120 75" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="doveBodyGradDate" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff"/>
+            <stop offset="65%" stop-color="#fff9f3"/>
+            <stop offset="100%" stop-color="#f6e8da"/>
+          </linearGradient>
+          <linearGradient id="doveWingGradDate" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff"/>
+            <stop offset="75%" stop-color="#fff2e7"/>
+            <stop offset="100%" stop-color="#f0dac8"/>
+          </linearGradient>
+          <linearGradient id="goldBeakGradDate" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffe28a"/>
+            <stop offset="50%" stop-color="#dfa92a"/>
+            <stop offset="100%" stop-color="#996e0c"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Far Wing (Behind Dove Body) -->
+        <g class="dove-far-wing">
+          <path d="M 50,30 C 54,14 66,2 80,0 C 76,10 70,22 58,32 Z" fill="url(#doveWingGradDate)" opacity="0.8"/>
+        </g>
+
+        <!-- Dove Tail Feathers -->
+        <g class="dove-tail">
+          <path d="M 76,40 C 92,42 108,46 116,52 C 105,54 90,50 78,46 Z" fill="#ffffff"/>
+          <path d="M 74,42 C 90,47 104,54 112,60 C 100,59 88,52 76,47 Z" fill="#f8ece2"/>
+        </g>
+
+        <!-- Dove Body & Head (Facing Left) -->
+        <path class="dove-body" d="M 22,32 C 18,29 15,24 18,19 C 21,14 27,13 33,15 C 43,18 53,24 64,30 C 76,36 82,41 80,46 C 78,51 70,53 58,49 C 46,45 36,43 27,38 C 23,36 22,33 22,32 Z" fill="url(#doveBodyGradDate)"/>
+
+        <!-- Beak holding golden ring -->
+        <path d="M 17,19 L 6,22 L 16,25 Z" fill="url(#goldBeakGradDate)"/>
+        
+        <!-- Golden Clasp Ring held in Beak -->
+        <circle cx="8" cy="27" r="4" fill="none" stroke="url(#goldBeakGradDate)" stroke-width="2"/>
+
+        <!-- Cute Eye -->
+        <circle cx="22" cy="19" r="2" fill="#321b1b"/>
+        <circle cx="21.3" cy="18.3" r="0.7" fill="#ffffff"/>
+
+        <!-- Near Wing (Front of Body - Flap Animation) -->
+        <g class="dove-near-wing">
+          <path d="M 44,31 C 38,12 46,-4 66,-6 C 62,6 56,20 46,32 Z" fill="url(#doveWingGradDate)"/>
+          <path d="M 48,31 C 46,16 54,2 70,0 C 66,12 60,23 51,33 Z" fill="#ffffff" opacity="0.95"/>
+          <path d="M 46,30 C 42,18 48,6 62,0" fill="none" stroke="#ebd6c5" stroke-width="0.8"/>
+        </g>
+      </svg>
+
+      <!-- Golden Chain & Hanging Royal Wedding Date Banner -->
+      <div class="date-banner-pendulum">
+        
+        <!-- Golden Chain Links -->
+        <div class="gold-chain-track">
+          <span class="chain-link"></span>
+          <span class="chain-link"></span>
+          <span class="chain-link"></span>
+          <span class="chain-link"></span>
+        </div>
+
+        <!-- Royal Wedding Date Card (Date Only) -->
+        <div class="royal-date-banner-card">
+          <span class="date-card-sparkle sp-1">✦</span>
+          <span class="date-card-sparkle sp-2">✦</span>
+          <div class="date-banner-tag">SAVE THE DATE</div>
+          <div class="date-banner-val">
+            <span class="date-num-part">11</span>
+            <span class="date-dot">•</span>
+            <span class="date-num-part">11</span>
+            <span class="date-dot">•</span>
+            <span class="date-num-part">2026</span>
+          </div>
+          <div class="date-banner-sub">Purushothaman &amp; Kanchana</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Luxury Top Navigation Bar with Corner PK & Scrolling Animation -->
+  <header class="top-nav-bar" id="topNavBar">
+    <div class="nav-container">
+      
+      <!-- Corner "PK" Monogram Crest -->
+      <a href="#heroWeddingImg" class="pk-corner-badge" aria-label="Purushothaman & Kanchana">
+        <div class="pk-crest">
+          <span class="pk-crest-text">PK</span>
+        </div>
+        <div class="pk-brand-text">
+          <span class="pk-brand-main">P &amp; K</span>
+          <span class="pk-brand-sub">WEDDING</span>
+        </div>
+      </a>
+
+      <!-- Center Couple Headline -->
+      <div class="nav-center-title">
+        <span class="nav-couple-names">Purushothaman &amp; Kanchana</span>
+      </div>
+
+      <!-- Right Corner Navigation & Audio Melodies Buttons -->
+      <div class="nav-actions">
+        <a href="#gallerySection" class="nav-icon-btn" id="navGalleryBtn" aria-label="View Photo Gallery" title="Moments & Gallery">
+          <i class="fa-solid fa-camera-retro"></i>
+        </a>
+        <a href="#receptionSection" class="nav-icon-btn" id="navReceptionBtn" aria-label="View Wedding Reception" title="Reception: 10.11.2026">
+          <i class="fa-solid fa-champagne-glasses"></i>
+        </a>
+        <a href="#venuesSection" class="nav-icon-btn" id="navLocationBtn" aria-label="View Wedding Venues & Map" title="View Venues & Map">
+          <i class="fa-solid fa-location-dot"></i>
+        </a>
+        <button id="musicToggleBtn" class="nav-icon-btn" aria-label="Toggle Wedding Music" title="Play Auspicious Music">
+          <i class="fa-solid fa-volume-xmark" id="musicIcon"></i>
+          <span class="music-wave" id="musicWave"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Scrolling Animation Marquee Banner: Purushothaman & Kanchana -->
+    <div class="nav-ticker-bar">
+      <div class="ticker-track">
+        <div class="ticker-content">
+          <span class="ticker-item"><i class="fa-solid fa-om ticker-symbol"></i> <span class="couple-name">Purushothaman &amp; Kanchana</span> <span class="ticker-symbol">✦</span> SAVE THE DATE <span class="ticker-symbol">✦</span> NOVEMBER 11, 2026</span>
+          <span class="ticker-item"><span class="ticker-symbol">✦</span> <span class="couple-name">Purushothaman &amp; Kanchana</span> <span class="ticker-symbol">✦</span> AUSPICIOUS WEDDING UNION</span>
+          <span class="ticker-item"><span class="ticker-symbol">✦</span> <span class="couple-name">Purushothaman &amp; Kanchana</span> <span class="ticker-symbol">✦</span> TOGETHER FOREVER</span>
+        </div>
+        <!-- Duplicated track for seamless infinite scroll animation -->
+        <div class="ticker-content" aria-hidden="true">
+          <span class="ticker-item"><i class="fa-solid fa-om ticker-symbol"></i> <span class="couple-name">Purushothaman &amp; Kanchana</span> <span class="ticker-symbol">✦</span> SAVE THE DATE <span class="ticker-symbol">✦</span> NOVEMBER 11, 2026</span>
+          <span class="ticker-item"><span class="ticker-symbol">✦</span> <span class="couple-name">Purushothaman &amp; Kanchana</span> <span class="ticker-symbol">✦</span> AUSPICIOUS WEDDING UNION</span>
+          <span class="ticker-item"><span class="ticker-symbol">✦</span> <span class="couple-name">Purushothaman &amp; Kanchana</span> <span class="ticker-symbol">✦</span> TOGETHER FOREVER</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Website Container -->
+  <main class="wedding-main-container">
+    
+    <!-- SECTION 1: HERO / SAVE THE DATE POSTER CARD -->
+    <section class="hero-section" id="heroSection">
+      <div class="hero-card-frame">
+        <div class="hero-image-wrapper">
+          <img 
+            src="hero-image.jpg" 
+            alt="Purushothaman & Kanchana - Save The Date" 
+            class="hero-wedding-img" 
+            id="heroWeddingImg"
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: A HEARTFELT WELCOME TO OUR FRIENDS & FAMILY -->
+    <section class="wedding-welcome-section" id="welcomeSection">
+      <div class="welcome-card-frame">
+        <div class="welcome-royal-card">
+          
+          <!-- Corner Filigree Ornaments -->
+          <div class="card-ornament tl"></div>
+          <div class="card-ornament tr"></div>
+          <div class="card-ornament bl"></div>
+          <div class="card-ornament br"></div>
+
+          <!-- Top Auspicious Crest & Sacred Gold Emblem -->
+          <div class="welcome-top-crest">
+            <div class="crest-wings-line"></div>
+            <div class="crest-emblem-badge" title="With Sacred Love & Blessings">
+              <i class="fa-solid fa-heart crest-heart-icon"></i>
+            </div>
+            <div class="crest-wings-line"></div>
+          </div>
+
+          <!-- Dual Language Showcase: Both Languages Always on Screen -->
+          <div class="welcome-dual-showcase">
+            
+            <!-- 1. ENGLISH GREETING -->
+            <div class="welcome-bilingual-col welcome-col-en">
+              <div class="welcome-lang-chip">
+                <span class="chip-dot"></span>
+                <span>ENGLISH</span>
+              </div>
+
+              <h2 class="welcome-title-en">A Heartfelt Welcome</h2>
+              
+              <div class="welcome-gold-divider">
+                <span class="w-div-line"></span>
+                <span class="w-div-gem">✦</span>
+                <i class="fa-solid fa-heart w-div-heart"></i>
+                <span class="w-div-gem">✦</span>
+                <span class="w-div-line"></span>
+              </div>
+
+              <p class="welcome-text-en">
+                With hearts full of love and joy, we warmly welcome our dear friends and family to celebrate the beautiful beginning of our forever.
+              </p>
+              <p class="welcome-text-en highlight-blessing">
+                Your presence, blessings, and love will make our special day even more memorable.
+              </p>
+            </div>
+
+            <!-- Inter-Language Transition Divider (Vertical on Desktop, Horizontal on Mobile) -->
+            <div class="welcome-dual-divider">
+              <span class="dual-div-line"></span>
+              <div class="dual-div-icon">
+                <span class="dual-flourish">❧</span>
+                <i class="fa-solid fa-heart"></i>
+                <span class="dual-flourish">☙</span>
+              </div>
+              <span class="dual-div-line"></span>
+            </div>
+
+            <!-- 2. TAMIL GREETING -->
+            <div class="welcome-bilingual-col welcome-col-ta">
+              <div class="welcome-lang-chip chip-ta">
+                <span class="chip-dot"></span>
+                <span>தமிழ்</span>
+              </div>
+
+              <h2 class="welcome-title-ta">அன்புடன் வரவேற்கிறோம்!</h2>
+              
+              <div class="welcome-gold-divider">
+                <span class="w-div-line"></span>
+                <span class="w-div-gem">✦</span>
+                <i class="fa-solid fa-heart w-div-heart"></i>
+                <span class="w-div-gem">✦</span>
+                <span class="w-div-line"></span>
+              </div>
+
+              <p class="welcome-text-ta">
+                எங்கள் வாழ்க்கையின் அழகான புதிய தொடக்கமான திருமண விழாவில், எங்கள் அன்பு நண்பர்கள் மற்றும் குடும்பத்தினர் அனைவரையும் மனமார வரவேற்கிறோம்.
+              </p>
+              <p class="welcome-text-ta highlight-blessing">
+                உங்கள் வருகையும், அன்பும், ஆசீர்வாதங்களும் எங்கள் திருமண நாளை மேலும் சிறப்பானதாக மாற்றும்.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Auspicious Wedding Date Banner (Unified, Balanced & Clean) -->
+          <div class="welcome-date-pill">
+            <div class="date-pill-icon">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <div class="date-pill-text">
+              <span class="date-pill-primary">Wednesday, 11th November 2026</span>
+              <span class="date-pill-secondary">புதன்கிழமை, 11 நவம்பர் 2026 • 6:00 AM – 7:30 AM</span>
+            </div>
+          </div>
+
+          <!-- Couple Signatures Footer -->
+          <div class="welcome-couple-footer">
+            <div class="welcome-footer-divider"></div>
+            <div class="welcome-signatures">
+              <div class="couple-names-en">Purushothaman &amp; Kanchana</div>
+              <div class="couple-names-ta">புருஷோத்தமன் &amp; காஞ்சனா</div>
+              <div class="welcome-subnote">
+                <i class="fa-solid fa-heart"></i> With Love, Blessings &amp; Joy <i class="fa-solid fa-heart"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: 1-BY-1 GRAND WEDDING INVITATION CARD -->
+    <section class="single-wedding-card-section" id="coupleSection">
+      <div class="royal-unified-card">
+        
+        <!-- Corner Gold Filigree Accents -->
+        <div class="card-ornament tl"></div>
+        <div class="card-ornament tr"></div>
+        <div class="card-ornament bl"></div>
+        <div class="card-ornament br"></div>
+
+        <!-- Auspicious Header -->
+        <div class="unified-card-header">
+          <span class="section-pretitle">TWO SOULS • ONE SACRED DESTINY</span>
+          <h2 class="unified-card-title">Wedding Invitation</h2>
+          <div class="gold-mandala-divider">
+            <span class="divider-line"></span>
+            <i class="fa-solid fa-heart divider-icon"></i>
+            <span class="divider-line"></span>
+          </div>
+          <p class="unified-card-blessing">
+            With the divine blessings of our beloved parents and almighty god, we cordially invite you to celebrate the marriage of
+          </p>
+        </div>
+
+        <!-- 1-BY-1 COUPLE SHOWCASE CONTAINER -->
+        <div class="sequential-couple-wrapper">
+          
+          <!-- 1. GROOM PROFILE (1st) -->
+          <div class="grand-profile-row groom-row">
+            <div class="grand-portrait-frame">
+              <div class="frame-halo"></div>
+              <img 
+                src="purushothaman.png" 
+                alt="Purushothaman B - Groom" 
+                class="grand-portrait-img"
+                loading="lazy"
+              >
+            </div>
+            
+            <div class="grand-profile-text">
+              <div class="grand-role-pill groom-pill">
+                <i class="fa-solid fa-star"></i> THE GROOM
+              </div>
+              <h3 class="grand-person-name">Purushothaman B</h3>
+              <div class="grand-degree-badge">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>B.Tech</span>
+              </div>
+              <div class="grand-family-block">
+                <span class="family-relation-label">Son of</span>
+                <p class="family-parents-text">R. Balavinayagam &amp; B. Santhi</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. SACRED "WEDS" CENTERPIECE CONNECTOR -->
+          <div class="grand-weds-connector">
+            <div class="connector-line"></div>
+            <div class="weds-mandala-crest">
+              <span class="weds-text-bold">WEDS</span>
+              <div class="weds-floral-knot">
+                <i class="fa-solid fa-infinity"></i>
+              </div>
+            </div>
+            <div class="connector-line"></div>
+          </div>
+
+          <!-- 3. BRIDE PROFILE (2nd) -->
+          <div class="grand-profile-row bride-row">
+            <div class="grand-portrait-frame">
+              <div class="frame-halo"></div>
+              <img 
+                src="kanchana.png" 
+                alt="Kanchana S - Bride" 
+                class="grand-portrait-img"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="grand-profile-text">
+              <div class="grand-role-pill bride-pill">
+                <i class="fa-solid fa-star"></i> THE BRIDE
+              </div>
+              <h3 class="grand-person-name">Kanchana S</h3>
+              <div class="grand-degree-badge">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>B.Com</span>
+              </div>
+              <div class="grand-family-block">
+                <span class="family-relation-label">Daughter of</span>
+                <p class="family-parents-text">Sundharamoorthi &amp; Sudha</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Auspicious Date & Interactive Actions Bar -->
+        <div class="wedding-actions-banner">
+          <div class="banner-date-group">
+            <div class="calendar-icon-box">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <div class="date-text-content">
+              <span class="date-primary">Wednesday, 11th November 2026</span>
+              <span class="date-secondary">Muhurtham: 6:00 AM – 7:30 AM IST</span>
+            </div>
+          </div>
+
+          <div class="banner-buttons">
+            <button class="royal-btn-action primary" id="addToCalMainBtn" title="Add to your calendar">
+              <i class="fa-solid fa-calendar-plus"></i>
+              <span>Add to Calendar</span>
+            </button>
+            
+            <button class="royal-btn-action secondary" id="shareWhatsappBtn" title="Share via WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>Share Invitation</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION: ROYAL MOMENTS & PHOTO GALLERY (LEFT & RIGHT SCROLLABLE)
+         ========================================================================= -->
+    <section class="gallery-section" id="gallerySection">
+      <div class="gallery-card-frame">
+        
+        <!-- Corner Gold Filigree Accents -->
+        <div class="card-ornament tl"></div>
+        <div class="card-ornament tr"></div>
+        <div class="card-ornament bl"></div>
+        <div class="card-ornament br"></div>
+
+        <!-- Section Header -->
+        <div class="gallery-header">
+          <h2 class="gallery-main-title">Royal Moments &amp; Gallery</h2>
+          <div class="gallery-tamil-title">எங்கள் இனிய தருணங்கள்</div>
+          
+          <div class="gold-mandala-divider">
+            <span class="divider-line"></span>
+            <i class="fa-solid fa-camera divider-icon"></i>
+            <span class="divider-line"></span>
+          </div>
+
+          <p class="gallery-blessing-subtitle">
+            A glimpse into our joyous journey of love, traditional splendor, and unforgettable celebrations.
+          </p>
+        </div>
+
+        <!-- Left-and-Right Scrollable Carousel Track (Pure, Clean Photos Without Text Overlays) -->
+        <div class="gallery-carousel-wrapper">
+          <div class="gallery-carousel-track" id="galleryCarouselTrack">
+            
+            <!-- Slide 1: pk main 1.png -->
+            <div class="gallery-carousel-card" data-index="0" title="Click to view full photo">
+              <div class="gallery-photo-box">
+                <img src="pk main 1.png" alt="Purushothaman &amp; Kanchana - Wedding Photo 1" loading="lazy">
+                <div class="gallery-zoom-badge"><i class="fa-solid fa-expand"></i></div>
+              </div>
+            </div>
+
+            <!-- Slide 2: pk main 2.png -->
+            <div class="gallery-carousel-card" data-index="1" title="Click to view full photo">
+              <div class="gallery-photo-box">
+                <img src="pk main 2.png" alt="Purushothaman &amp; Kanchana - Wedding Photo 2" loading="lazy">
+                <div class="gallery-zoom-badge"><i class="fa-solid fa-expand"></i></div>
+              </div>
+            </div>
+
+            <!-- Slide 3: pk 5.jpeg -->
+            <div class="gallery-carousel-card" data-index="2" title="Click to view full photo">
+              <div class="gallery-photo-box">
+                <img src="pk 5.jpeg" alt="Purushothaman &amp; Kanchana - Wedding Photo 3" loading="lazy">
+                <div class="gallery-zoom-badge"><i class="fa-solid fa-expand"></i></div>
+              </div>
+            </div>
+
+            <!-- Slide 4: pk 2.png -->
+            <div class="gallery-carousel-card" data-index="3" title="Click to view full photo">
+              <div class="gallery-photo-box">
+                <img src="pk 2.png" alt="Kanchana - Wedding Photo 4" loading="lazy">
+                <div class="gallery-zoom-badge"><i class="fa-solid fa-expand"></i></div>
+              </div>
+            </div>
+
+            <!-- Slide 5: pk 4.png -->
+            <div class="gallery-carousel-card" data-index="4" title="Click to view full photo">
+              <div class="gallery-photo-box">
+                <img src="pk 4.png" alt="Purushothaman - Wedding Photo 5" loading="lazy">
+                <div class="gallery-zoom-badge"><i class="fa-solid fa-expand"></i></div>
+              </div>
+            </div>
+
+            <!-- Slide 6: pk 3.png -->
+            <div class="gallery-carousel-card" data-index="5" title="Click to view full photo">
+              <div class="gallery-photo-box">
+                <img src="pk 3.png" alt="Kanchana - Wedding Photo 6" loading="lazy">
+                <div class="gallery-zoom-badge"><i class="fa-solid fa-expand"></i></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Carousel Pagination Dots -->
+        <div class="gallery-dots-bar" id="galleryDotsBar">
+          <button type="button" class="gallery-dot active" data-index="0" aria-label="Go to photo 1"></button>
+          <button type="button" class="gallery-dot" data-index="1" aria-label="Go to photo 2"></button>
+          <button type="button" class="gallery-dot" data-index="2" aria-label="Go to photo 3"></button>
+          <button type="button" class="gallery-dot" data-index="3" aria-label="Go to photo 4"></button>
+          <button type="button" class="gallery-dot" data-index="4" aria-label="Go to photo 5"></button>
+          <button type="button" class="gallery-dot" data-index="5" aria-label="Go to photo 6"></button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION: GRAND WEDDING RECEPTION (TUESDAY, 10TH NOVEMBER 2026)
+         ========================================================================= -->
+    <section class="reception-section" id="receptionSection">
+      <div class="reception-card-frame">
+        
+        <!-- Corner Gold Filigree Accents -->
+        <div class="card-ornament tl"></div>
+        <div class="card-ornament tr"></div>
+        <div class="card-ornament bl"></div>
+        <div class="card-ornament br"></div>
+
+        <!-- Section Header -->
+        <div class="reception-header">
+          <div class="reception-eyebrow">
+            <i class="fa-solid fa-moon"></i>
+            <span>PRE-WEDDING CELEBRATION &amp; GALA</span>
+          </div>
+          <h2 class="reception-main-title">Grand Wedding Reception</h2>
+          <div class="gold-mandala-divider">
+            <span class="divider-line"></span>
+            <i class="fa-solid fa-champagne-glasses divider-icon"></i>
+            <span class="divider-line"></span>
+          </div>
+          <p class="reception-blessing-subtitle">
+            We cordially invite you and your family to join us for an auspicious evening of blessings, musical melodies, and a sumptuous royal dinner feast.
+          </p>
+        </div>
+
+        <!-- Reception Showcase Card (Horizontal Split Layout) -->
+        <div class="reception-showcase-card">
+          
+          <!-- Left: Reception Stage Photo Showcase -->
+          <div class="reception-media-wrap">
+            <img 
+              src="reception-stage.jpg" 
+              alt="Grand Wedding Reception Stage - Purushothaman & Kanchana" 
+              class="reception-stage-img"
+              loading="lazy"
+            >
+            <div class="reception-stage-badge">
+              <i class="fa-solid fa-sparkles"></i> Evening Reception Gala
+            </div>
+            <div class="reception-floating-time">
+              <i class="fa-solid fa-clock"></i> 6:30 PM Onwards
+            </div>
+          </div>
+
+          <!-- Right: Reception Details Body -->
+          <div class="reception-info-content">
+            
+            <!-- Reception Event & Date Details -->
+            <div class="reception-royal-date-card">
+
+              <div class="reception-date-top-tag">
+                <i class="fa-solid fa-sparkles"></i> SAVE THE DATE • RECEPTION GALA
+              </div>
+
+              <div class="reception-weekday-label">
+                TUESDAY EVENING
+              </div>
+
+              <div class="reception-big-date-row">
+                <span class="reception-date-number">10</span>
+                <div class="reception-date-stack">
+                  <span class="reception-date-month">NOVEMBER</span>
+                  <span class="reception-date-year">2026</span>
+                  <span class="reception-date-dots">10 • 11 • 2026</span>
+                </div>
+              </div>
+
+              <div class="reception-timing-pill">
+                <span class="time-item"><i class="fa-solid fa-clock"></i> 6:30 PM Onwards</span>
+                <span class="time-sep">•</span>
+                <span class="time-item"><i class="fa-solid fa-location-dot"></i> Royal Marriage Hall</span>
+              </div>
+
+              <p class="reception-card-blessing">
+                Join us for an enchanting evening of joyful greetings, musical melodies, and a sumptuous traditional royal banquet feast.
+              </p>
+
+              <!-- Reception Venue & Action Buttons -->
+              <div class="reception-actions-row">
+                <a 
+                  href="#marriageHallCard" 
+                  class="royal-btn-action primary"
+                  title="View Hall Location in Venues"
+                >
+                  <i class="fa-solid fa-map-location-dot"></i> View Marriage Hall &amp; Map
+                </a>
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=12.223389,79.074833" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="royal-btn-action secondary"
+                  title="Open Hall in Google Maps"
+                >
+                  <i class="fa-solid fa-diamond-turn-right"></i> Google Maps Directions
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 3: VENUES, 3 STOPS & COMPLETE INTERACTIVE ROUTE GUIDE
+         ========================================================================= -->
+    <section class="venues-section" id="venuesSection">
+      
+      <div class="venues-main-card">
+        
+        <!-- Corner Gold Filigree Accents -->
+        <div class="card-ornament tl"></div>
+        <div class="card-ornament tr"></div>
+        <div class="card-ornament bl"></div>
+        <div class="card-ornament br"></div>
+
+        <!-- Section Header -->
+        <div class="venues-header">
+          <span class="section-pretitle">CELEBRATION DESTINATIONS &amp; JOURNEY</span>
+          <h2 class="venues-title">Venues &amp; Complete Route Guide</h2>
+          <div class="gold-mandala-divider">
+            <span class="divider-line"></span>
+            <i class="fa-solid fa-location-dot divider-icon"></i>
+            <span class="divider-line"></span>
+          </div>
+          <p class="venues-blessing-text">
+            Explore all 3 celebration stops, real-time road driving distances, live travel times, and interactive navigation maps for our wedding festivities.
+          </p>
+        </div>
+
+        <!-- CELEBRATION VENUES SHOWCASE GRID -->
+        <div class="venues-grid celebration-stops-grid">
+          
+          <!-- Stop 1: Sri Karumariamman Temple (Sacred Muhurtham Venue) -->
+          <div class="venue-location-card sacred-muhurtham-card" id="karumariammanCard">
+            
+            <div class="venue-photo-wrap">
+              <span class="venue-badge temple-badge">
+                <i class="fa-solid fa-om"></i> Stop 1 • Sacred Muhurtham
+              </span>
+              <span class="venue-photo-time-pill">
+                <i class="fa-solid fa-clock"></i> 6:00 AM – 7:30 AM
+              </span>
+              <img 
+                src="karumariamman-temple.jpg" 
+                alt="Sri Karumariamman Temple - Sacred Muhurtham Venue" 
+                class="venue-photo-img"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="venue-details-body">
+              
+              <!-- Header & Sacred Names -->
+              <div class="venue-header-row">
+                <div class="venue-ceremony-pill">
+                  <i class="fa-solid fa-star"></i> SACRED WEDDING CEREMONY
+                </div>
+                <h3 class="venue-name">Sri Karumariamman Temple</h3>
+                <div class="venue-tamil-name">ஸ்ரீ கருமாரியம்மன் திருக்கோவில்</div>
+              </div>
+
+              <!-- Auspicious Muhurtham Timing Box -->
+              <div class="muhurtham-highlight-box">
+                <div class="muhurtham-box-item">
+                  <span class="m-box-label"><i class="fa-solid fa-calendar-check"></i> WEDDING DAY</span>
+                  <span class="m-box-val">Wednesday, 11th Nov 2026</span>
+                </div>
+                <div class="muhurtham-box-sep"></div>
+                <div class="muhurtham-box-item highlight">
+                  <span class="m-box-label"><i class="fa-solid fa-clock"></i> AUSPICIOUS MUHURTHAM</span>
+                  <span class="m-box-val">6:00 AM – 7:30 AM IST</span>
+                </div>
+              </div>
+
+              <!-- Address & Landmark Row -->
+              <div class="venue-address-row">
+                <div class="venue-address-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="venue-address-text">
+                  <span class="addr-main">Sri Karumariamman Temple, Tiruvannamalai</span>
+                  <span class="addr-coords"><i class="fa-solid fa-crosshairs"></i> 12°12'27.5"N 79°04'51.0"E</span>
+                </div>
+              </div>
+
+              <!-- Ceremonial Blessing Description -->
+              <p class="venue-desc">
+                The divine ceremony of holy Vivaha and auspicious Mangalya Dharanam will be solemnized here at Sri Karumariamman Temple during the holy Brahma Muhurtham morning hours.
+              </p>
+
+              <!-- Action Buttons Row -->
+              <div class="venue-card-actions dual-actions">
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=12.207639,79.080835" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="royal-btn-action primary"
+                  title="Open Temple in Google Maps"
+                >
+                  <i class="fa-solid fa-diamond-turn-right"></i> Open in Google Maps
+                </a>
+
+                <button 
+                  type="button" 
+                  class="royal-btn-action secondary toggle-temple-map-btn" 
+                  id="toggleTempleMapBtn"
+                  title="Toggle Map Preview"
+                  aria-expanded="false"
+                >
+                  <i class="fa-solid fa-map-location-dot" id="templeMapIcon"></i>
+                  <span id="templeMapBtnText">View Map Location</span>
+                </button>
+              </div>
+
+              <!-- Collapsible Map Frame -->
+              <div class="venue-collapsible-map" id="templeMapDrawer" style="display: none;">
+                <div class="map-landmark-note">
+                  <i class="fa-solid fa-circle-info"></i> Note: On Google Maps, this sacred temple area is marked near Hanuman Kovil landmark.
+                </div>
+                <div class="collapsible-iframe-wrap">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3753.7327704039653!2d79.08083487759534!3d12.207638664570338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bacbf00375b9f3b%3A0x8af6ab24064f8724!2sHanuman%20Kovil!5e0!3m2!1sen!2sin!4v1791700275775!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="210" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    title="Sri Karumariamman Temple Map Location"
+                  ></iframe>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Stop 2: Marriage Hall (Wedding Celebrations & Grand Feast) -->
+          <div class="venue-location-card" id="marriageHallCard">
+            <div class="venue-photo-wrap">
+              <span class="venue-badge hall-badge">
+                <i class="fa-solid fa-bell-concierge"></i> Stop 2: Marriage Hall
+              </span>
+              <img 
+                src="mandap-decor.jpg" 
+                alt="Marriage Hall - Royal Wedding Mandap Decoration" 
+                class="venue-photo-img"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="venue-details-body">
+              <h3 class="venue-name">Royal Marriage Hall</h3>
+              <p class="venue-coords-text">
+                <i class="fa-solid fa-location-crosshairs"></i> 12°13'24.2"N 79°04'29.4"E
+              </p>
+              
+              <div class="event-timing-tag celebration-tag">
+                <i class="fa-solid fa-utensils"></i> Wedding Celebrations &amp; Grand Feast
+              </div>
+
+              <p class="venue-desc">
+                The grand wedding festivities, guest greetings, and traditional wedding feast banquet will be hosted here.
+              </p>
+
+              <div class="venue-card-actions">
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=12.223389,79.074833" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="royal-btn-action secondary full-width"
+                >
+                  <i class="fa-solid fa-map-location-dot"></i> Open Marriage Hall in Google Maps
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stop 3: Home Residence -->
+          <div class="venue-location-card" id="homeCard">
+            <div class="venue-photo-wrap">
+              <span class="venue-badge home-badge">
+                <i class="fa-solid fa-house-chimney"></i> Stop 3: Home Location
+              </span>
+              <img 
+                src="home-location.jpg" 
+                alt="Home Residence - Traditional Auspicious Entrance" 
+                class="venue-photo-img"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="venue-details-body">
+              <h3 class="venue-name">Groom's Home Residence</h3>
+              <p class="venue-coords-text">
+                <i class="fa-solid fa-location-crosshairs"></i> 12°12'27.2"N 79°04'46.4"E
+              </p>
+              <p class="venue-desc">
+                Welcome to our home for pre-wedding rituals, greetings, and traditional family hospitality.
+              </p>
+              
+              <div class="venue-card-actions">
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=12.207556,79.079556" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="royal-btn-action secondary full-width"
+                >
+                  <i class="fa-solid fa-diamond-turn-right"></i> Open Home in Google Maps
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stop 4: Tiruvannamalai Sacred Landmark -->
+          <div class="venue-location-card" id="tvmCard">
+            <div class="venue-photo-wrap">
+              <span class="venue-badge tvm-badge">
+                <i class="fa-solid fa-landmark-dome"></i> Stop 4: Tiruvannamalai
+              </span>
+              <img 
+                src="tiruvannamalai-location.jpg" 
+                alt="Tiruvannamalai - Sacred Temple & Annamalai Hill Landmark" 
+                class="venue-photo-img"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="venue-details-body">
+              <h3 class="venue-name">Tiruvannamalai Town Center</h3>
+              <p class="venue-coords-text">
+                <i class="fa-solid fa-location-crosshairs"></i> 12°13'46.0"N 79°04'02.0"E
+              </p>
+              <p class="venue-desc">
+                The sacred spiritual heart of Tiruvannamalai, connecting the route between home and the wedding venue.
+              </p>
+              
+              <div class="venue-card-actions">
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=12.2294,79.0673" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="royal-btn-action secondary full-width"
+                >
+                  <i class="fa-solid fa-diamond-turn-right"></i> Open Tiruvannamalai in Google Maps
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ===================================================================
+             COMPLETE ROUTE NAVIGATOR & LIVE INTERACTIVE MAP
+             =================================================================== -->
+        <div class="route-navigator-wrapper">
+          
+          <div class="route-navigator-header">
+            <div class="route-badge-pill">
+              <i class="fa-solid fa-route"></i> COMPLETE JOURNEY &amp; DRIVING ROUTES
+            </div>
+            <h3 class="route-navigator-title">Interactive Route Guide &amp; Travel Times</h3>
+            <p class="route-navigator-subtitle">
+              Select any route segment below to view live driving directions, road distances, and real-time travel times.
+            </p>
+          </div>
+
+          <!-- ROUTE SELECTOR TABS -->
+          <div class="route-tabs-bar" role="tablist">
+            <button class="route-tab-btn active" data-route="complete" id="tabComplete">
+              <i class="fa-solid fa-arrows-split-up-and-left"></i>
+              <span>All Stops (Home ➔ TVM ➔ Hall)</span>
+            </button>
+            <button class="route-tab-btn" data-route="home-tvm" id="tabHomeTvm">
+              <i class="fa-solid fa-car-side"></i>
+              <span>Home ➔ Tiruvannamalai</span>
+            </button>
+            <button class="route-tab-btn" data-route="tvm-hall" id="tabTvmHall">
+              <i class="fa-solid fa-car-side"></i>
+              <span>Tiruvannamalai ➔ Marriage Hall</span>
+            </button>
+            <button class="route-tab-btn" data-route="home-hall" id="tabHomeHall">
+              <i class="fa-solid fa-bolt"></i>
+              <span>Home ➔ Hall (Direct)</span>
+            </button>
+          </div>
+
+          <!-- DYNAMIC STATS PANEL -->
+          <div class="route-live-panel">
+            <div class="route-live-header">
+              <div class="route-title-badge">
+                <i class="fa-solid fa-compass" id="activeRouteIcon"></i>
+                <span id="activeRouteName">Complete Journey (All 3 Stops)</span>
+              </div>
+              <div class="route-calc-source">
+                <span class="live-pulse-dot"></span>
+                <span id="routeApiBadge">Dynamic Road Calculation via OSRM</span>
+              </div>
+            </div>
+
+            <!-- Stats Highlight Grid -->
+            <div class="route-stats-grid">
+              <div class="route-stat-card">
+                <div class="stat-icon-wrap"><i class="fa-solid fa-road"></i></div>
+                <div class="stat-info">
+                  <span class="stat-number" id="routeDistanceDisplay">5.57</span>
+                  <span class="stat-unit">KM</span>
+                  <span class="stat-label">Driving Road Distance</span>
+                </div>
+              </div>
+
+              <div class="route-stat-card">
+                <div class="stat-icon-wrap time"><i class="fa-solid fa-stopwatch"></i></div>
+                <div class="stat-info">
+                  <span class="stat-number" id="routeDurationDisplay">~7</span>
+                  <span class="stat-unit">MINS</span>
+                  <span class="stat-label">Estimated Driving Time</span>
+                </div>
+              </div>
+
+              <div class="route-stat-card steps">
+                <div class="stat-icon-wrap map-pins"><i class="fa-solid fa-map-pin"></i></div>
+                <div class="stat-info">
+                  <span class="stat-number" id="routeStopsDisplay">3</span>
+                  <span class="stat-unit">STOPS</span>
+                  <span class="stat-label" id="routeStopsSummary">Home ➔ Tiruvannamalai ➔ Hall</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Journey Flow Breadcrumbs / Stepper -->
+            <div class="journey-stepper" id="journeyStepper">
+              <div class="step-node active" id="stepNode1">
+                <span class="step-num">1</span>
+                <span class="step-label">Home Residence</span>
+              </div>
+              <div class="step-line active"></div>
+              <div class="step-node active" id="stepNode2">
+                <span class="step-num">2</span>
+                <span class="step-label">Tiruvannamalai</span>
+              </div>
+              <div class="step-line active"></div>
+              <div class="step-node active" id="stepNode3">
+                <span class="step-num">3</span>
+                <span class="step-label">Marriage Hall</span>
+              </div>
+            </div>
+
+            <!-- Interactive Leaflet Map Display -->
+            <div class="interactive-map-frame">
+              <div id="interactiveWeddingMap" class="interactive-wedding-map" style="width: 100%; height: 420px; border-radius: 18px; z-index: 1;"></div>
+              
+              <!-- Floating Map Legend -->
+              <div class="map-legend-overlay">
+                <div class="legend-item"><span class="legend-dot home"></span> Home</div>
+                <div class="legend-item"><span class="legend-dot tvm"></span> Tiruvannamalai</div>
+                <div class="legend-item"><span class="legend-dot hall"></span> Marriage Hall</div>
+              </div>
+            </div>
+
+            <!-- Action Buttons: Directions & Google Maps -->
+            <div class="route-action-buttons">
+              <a 
+                id="routeDirectionsBtn"
+                href="https://www.google.com/maps/dir/?api=1&origin=12.207556,79.079556&destination=12.223389,79.074833&waypoints=12.2294,79.0673&travelmode=driving" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="royal-btn-action primary btn-compact"
+                title="Get Driving Directions via Google Maps"
+              >
+                <i class="fa-solid fa-location-arrow"></i>
+                <span>Directions</span>
+              </a>
+
+              <a 
+                id="routeOpenGmapsBtn"
+                href="https://www.google.com/maps/search/?api=1&query=12.223389,79.074833" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="royal-btn-action secondary btn-compact"
+                title="Open Location in Google Maps"
+              >
+                <i class="fa-solid fa-map-location-dot"></i>
+                <span>Google Maps</span>
+              </a>
+
+              <button type="button" id="toggleEditorBtn" class="royal-btn-action ghost btn-compact btn-edit-toggle" title="Customize / Edit Stops">
+                <i class="fa-solid fa-sliders"></i>
+                <span>Edit Addresses</span>
+              </button>
+            </div>
+
+            <!-- Collapsible Address & Stop Customizer -->
+            <div class="address-editor-drawer" id="addressEditorDrawer" style="display: none;">
+              <div class="editor-header">
+                <h4><i class="fa-solid fa-pen-to-square"></i> Customize / Edit Stop Addresses</h4>
+                <p>Modify coordinates or addresses below to recalculate live driving distances dynamically.</p>
+              </div>
+              <div class="editor-fields-grid">
+                <div class="editor-field">
+                  <label for="inputHomeCoords"><i class="fa-solid fa-house"></i> Stop 1: Home Address / Coords</label>
+                  <input type="text" id="inputHomeCoords" value="12.207556, 79.079556" placeholder="Latitude, Longitude or Address">
+                </div>
+                <div class="editor-field">
+                  <label for="inputTvmCoords"><i class="fa-solid fa-landmark-dome"></i> Stop 2: Tiruvannamalai Landmark</label>
+                  <input type="text" id="inputTvmCoords" value="12.229400, 79.067300" placeholder="Latitude, Longitude or Address">
+                </div>
+                <div class="editor-field">
+                  <label for="inputHallCoords"><i class="fa-solid fa-bell-concierge"></i> Stop 3: Marriage Hall Coords</label>
+                  <input type="text" id="inputHallCoords" value="12.223389, 79.074833" placeholder="Latitude, Longitude or Address">
+                </div>
+              </div>
+              <div class="editor-actions">
+                <button type="button" id="applyCustomCoordsBtn" class="royal-btn-action primary">
+                  <i class="fa-solid fa-rotate"></i> Recalculate Routes &amp; Distances
+                </button>
+                <button type="button" id="resetDefaultCoordsBtn" class="royal-btn-action ghost">
+                  <i class="fa-solid fa-clock-rotate-left"></i> Reset to Default
+                </button>
+              </div>
+              <div id="editorFeedbackMsg" class="editor-feedback-msg"></div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       SIMPLE ROYAL WEDDING FOOTER
+       ========================================================================= -->
+  <footer class="wedding-simple-footer" id="weddingFooter">
+    <div class="footer-simple-container">
+      
+      <!-- Top Decorative Motif -->
+      <div class="footer-simple-motif">
+        <span class="motif-line"></span>
+        <div class="motif-crest">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+        <span class="motif-line"></span>
+      </div>
+
+      <!-- Couple Title & Date -->
+      <div class="footer-simple-names">Purushothaman &amp; Kanchana</div>
+      <div class="footer-simple-date">
+        <i class="fa-solid fa-calendar-check"></i> Wednesday, 11th November 2026 • Tiruvannamalai
+      </div>
+
+      <p class="footer-simple-blessing">
+        With love, blessings and heartfelt gratitude for celebrating our sacred union with us.
+      </p>
+
+      <!-- Creator Credit Line -->
+      <div class="footer-simple-credit">
+        <span class="credit-badge">
+          <i class="fa-solid fa-heart credit-heart"></i> Created by <strong class="creator-names">Srikanth &amp; Loganathan</strong>
+        </span>
+      </div>
+
+      <!-- Bottom Minimal Copyright -->
+      <div class="footer-simple-copy">
+        &copy; 2026 Purushothaman &amp; Kanchana. All Rights Reserved.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating Side Location Quick Action Button -->
+  <a href="#venuesSection" class="floating-side-location-btn" id="floatingLocationBtn" aria-label="View Wedding Venues & Map" title="View Location & Map">
+    <span class="side-loc-pulse"></span>
+    <span class="side-loc-icon"><i class="fa-solid fa-location-dot"></i></span>
+    <span class="side-loc-text">Location</span>
+  </a>
+
+  <!-- Interactive Fullscreen Lightbox Modal -->
+  <div class="lightbox-modal" id="lightboxModal" aria-hidden="true" role="dialog" aria-label="Photo Lightbox">
+    <div class="lightbox-backdrop"></div>
+    <div class="lightbox-container">
+      
+      <!-- Top Bar: Counter & Close Button -->
+      <div class="lightbox-header">
+        <div class="lightbox-counter" id="lightboxCounter">1 / 6</div>
+        <button type="button" class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close Lightbox" title="Close (Esc)">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Main Image Display Frame -->
+      <div class="lightbox-media-box">
+        <img src="" alt="" id="lightboxImg" class="lightbox-img">
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button type="button" class="lightbox-arrow-btn prev" id="lightboxPrevBtn" aria-label="Previous photo" title="Previous (Left Arrow)">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button type="button" class="lightbox-arrow-btn next" id="lightboxNextBtn" aria-label="Next photo" title="Next (Right Arrow)">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+      <!-- Bottom Caption Card -->
+      <div class="lightbox-footer">
+        <h4 id="lightboxTitle" class="lightbox-title"></h4>
+        <p id="lightboxCaption" class="lightbox-caption"></p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

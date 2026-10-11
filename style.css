@@ -463,6 +463,199 @@ body {
 }
 
 /* ==========================================================================
+   SACRED THIRUKKURAL BLESSING SECTION
+   ========================================================================== */
+.sacred-kural-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.6rem 0 0.8rem;
+}
+
+.kural-card-frame {
+  width: 100%;
+  max-width: 860px;
+  position: relative;
+}
+
+.kural-royal-card {
+  width: 100%;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdfb 50%, #f1f7f1 100%);
+  border-radius: 20px;
+  border: 1.5px solid rgba(184, 134, 11, 0.45);
+  box-shadow: 
+    0 12px 32px rgba(22, 54, 36, 0.07),
+    0 0 20px rgba(184, 134, 11, 0.1),
+    inset 0 0 25px rgba(238, 245, 238, 0.5);
+  padding: 1.25rem 2rem 1.15rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.kural-royal-card::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  border: 1px solid rgba(184, 134, 11, 0.22);
+  border-radius: 14px;
+  pointer-events: none;
+}
+
+.kural-top-crest {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 0 auto 0.45rem;
+  width: 100%;
+  max-width: 220px;
+}
+
+.kural-crest-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #163624 0%, #2b6744 100%);
+  border: 1.2px solid #ffd56b;
+  color: #ffd56b;
+  font-size: 0.78rem;
+  box-shadow: 0 2px 8px rgba(22, 54, 36, 0.15);
+}
+
+.kural-chapter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.18rem 0.8rem;
+  border-radius: 50px;
+  background: rgba(184, 134, 11, 0.08);
+  border: 1px solid rgba(184, 134, 11, 0.35);
+  color: #724e06;
+  font-family: var(--font-tamil);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  margin-bottom: 0.65rem;
+}
+
+.kural-couplet-box {
+  position: relative;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0.2rem 1.2rem;
+}
+
+.kural-quote-mark {
+  position: absolute;
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: rgba(184, 134, 11, 0.35);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.kural-quote-mark.left {
+  top: -8px;
+  left: 0;
+}
+
+.kural-quote-mark.right {
+  bottom: -16px;
+  right: 0;
+}
+
+.kural-line {
+  font-family: var(--font-tamil);
+  font-size: clamp(1.08rem, 2.3vw, 1.35rem);
+  font-weight: 700;
+  color: #12331f;
+  line-height: 1.65;
+  letter-spacing: 0.3px;
+  margin: 0;
+}
+
+.kural-line.line-1 {
+  margin-bottom: 0.18rem;
+}
+
+.kural-line.line-2 {
+  color: #1a442a;
+}
+
+.kural-author-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  max-width: 640px;
+  margin: 0.45rem auto 0;
+  padding-right: 1rem;
+  gap: 0.3rem;
+  font-family: var(--font-tamil);
+}
+
+.kural-author-dash {
+  color: #b8860b;
+  font-weight: 700;
+}
+
+.kural-author-name {
+  font-size: clamp(0.92rem, 1.8vw, 1.05rem);
+  font-weight: 700;
+  color: #8c6208;
+  letter-spacing: 0.4px;
+}
+
+.kural-gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  width: 100%;
+  max-width: 180px;
+  margin: 0.5rem auto 0.4rem;
+}
+
+.kural-meaning-en {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(0.78rem, 1.4vw, 0.86rem);
+  color: #3b5f49;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 680px) {
+  .kural-royal-card {
+    padding: 1.1rem 1.1rem 1rem;
+    border-radius: 18px;
+  }
+
+  .kural-line {
+    font-size: 1.02rem;
+    line-height: 1.55;
+  }
+
+  .kural-author-wrap {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .kural-quote-mark {
+    display: none;
+  }
+}
+
+/* ==========================================================================
    A HEARTFELT WELCOME TO OUR FRIENDS & FAMILY SECTION
    Aesthetic: Soft Sage Green, Ivory & Antique Gold with Romantic Floral Accents
    ========================================================================== */

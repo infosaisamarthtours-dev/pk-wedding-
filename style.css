@@ -839,8 +839,8 @@ body {
 
 /* Couple Signatures Footer at Bottom */
 .welcome-couple-footer {
-  margin-top: 0.55rem;
-  padding-top: 0.45rem;
+  margin-top: 0.85rem;
+  padding-top: 0.35rem;
   position: relative;
   z-index: 2;
 }
@@ -850,34 +850,34 @@ body {
   max-width: 200px;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.4), transparent);
-  margin: 0 auto 0.45rem;
+  margin: 0 auto 0.55rem;
 }
 
 .welcome-signatures {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.12rem;
-}
-
-.couple-names-en {
-  font-family: var(--font-royal);
-  font-size: clamp(0.98rem, 1.8vw, 1.25rem);
-  font-weight: 800;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  background: linear-gradient(135deg, #163624 0%, #b8860b 50%, #163624 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  gap: 0.15rem;
 }
 
 .couple-names-ta {
   font-family: var(--font-tamil);
-  font-size: clamp(0.92rem, 1.6vw, 1.1rem);
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
   font-weight: 700;
   color: #163624;
-  letter-spacing: 0.3px;
-  margin-top: 0.04rem;
+  letter-spacing: 0.5px;
+}
+
+.couple-names-en {
+  font-family: var(--font-royal);
+  font-size: clamp(0.92rem, 1.6vw, 1.15rem);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #163624 0%, #b8860b 50%, #163624 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 0.08rem;
 }
 
 .welcome-subnote {

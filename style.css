@@ -1564,50 +1564,48 @@ body {
 
 .brother-item {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.25rem;
-  width: 100%;
-}
-
-.brother-name-row {
-  display: inline-flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  width: 100%;
 }
 
 .brother-flourish {
   color: #c4962c;
   font-size: 0.75rem;
+  line-height: 1;
 }
 
 .brother-name {
   font-family: var(--font-serif);
-  font-size: 1.08rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #163624;
   letter-spacing: 0.2px;
   line-height: 1.2;
+  white-space: nowrap;
 }
 
 .brother-degree {
   display: inline-flex;
   align-items: center;
-  gap: 0.38rem;
-  padding: 0.2rem 0.65rem;
+  gap: 0.35rem;
+  padding: 0.16rem 0.58rem;
   border-radius: 50px;
   background: rgba(184, 134, 11, 0.1);
   border: 1px solid rgba(184, 134, 11, 0.3);
   color: #7a5406;
   font-family: var(--font-sans);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 600;
   letter-spacing: 0.3px;
+  white-space: nowrap;
 }
 
 .brother-degree i {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   color: #b8860b;
 }
 

@@ -261,7 +261,7 @@ body {
 .ticker-track {
   display: inline-flex;
   white-space: nowrap;
-  animation: marqueeScroll 22s linear infinite;
+  animation: marqueeScroll 55s linear infinite;
   will-change: transform;
 }
 

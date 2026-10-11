@@ -1567,8 +1567,9 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.55rem;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  gap: 0.5rem;
   width: 100%;
 }
 
@@ -1957,12 +1958,20 @@ body {
     border-radius: 16px;
   }
 
+  .brother-item {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: 0.4rem;
+  }
+
   .brother-name {
-    font-size: 1.02rem;
+    font-size: 0.98rem;
+    white-space: nowrap;
   }
 
   .brother-degree {
-    font-size: 0.74rem;
+    font-size: 0.72rem;
+    white-space: nowrap;
   }
 
   @media (max-width: 400px) {
@@ -1989,16 +1998,24 @@ body {
     }
 
     .brothers-column {
-      padding: 1rem 0.75rem;
+      padding: 1rem 0.6rem;
+    }
+
+    .brother-item {
+      gap: 0.3rem;
+      flex-wrap: nowrap;
+      white-space: nowrap;
     }
 
     .brother-name {
-      font-size: 0.96rem;
+      font-size: 0.9rem;
+      white-space: nowrap;
     }
 
     .brother-degree {
-      font-size: 0.7rem;
-      padding: 0.16rem 0.55rem;
+      font-size: 0.68rem;
+      padding: 0.14rem 0.45rem;
+      white-space: nowrap;
     }
   }
 

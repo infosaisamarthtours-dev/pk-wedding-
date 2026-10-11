@@ -1059,32 +1059,32 @@
 
           <!-- ROUTE SELECTOR TABS - ALL VISIBLE RESPONSIVE GRID -->
           <div class="route-tabs-bar" role="tablist" aria-label="Wedding Route Choices">
-            <button class="route-tab-btn active" data-route="complete" id="tabComplete" type="button">
+            <button class="route-tab-btn active" data-route="complete" id="tabComplete" type="button" title="View complete 3-stop wedding route">
               <div class="route-btn-icon"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
               <div class="route-btn-text">
                 <span class="route-btn-title">All Stops</span>
                 <span class="route-btn-route">Home ➔ TVM ➔ Hall</span>
               </div>
             </button>
-            <button class="route-tab-btn" data-route="home-tvm" id="tabHomeTvm" type="button">
+            <button class="route-tab-btn" data-route="home-tvm" id="tabHomeTvm" type="button" title="Route from Home to Tiruvannamalai">
               <div class="route-btn-icon"><i class="fa-solid fa-car-side"></i></div>
               <div class="route-btn-text">
-                <span class="route-btn-title">Stop 1 ➔ 2</span>
-                <span class="route-btn-route">Home ➔ Tiruvannamalai</span>
+                <span class="route-btn-title">Home ➔ TVM</span>
+                <span class="route-btn-route">Stop 1 to Stop 2</span>
               </div>
             </button>
-            <button class="route-tab-btn" data-route="tvm-hall" id="tabTvmHall" type="button">
+            <button class="route-tab-btn" data-route="tvm-hall" id="tabTvmHall" type="button" title="Route from Tiruvannamalai to Marriage Hall">
               <div class="route-btn-icon"><i class="fa-solid fa-car-side"></i></div>
               <div class="route-btn-text">
-                <span class="route-btn-title">Stop 2 ➔ 3</span>
-                <span class="route-btn-route">TVM ➔ Marriage Hall</span>
+                <span class="route-btn-title">TVM ➔ Hall</span>
+                <span class="route-btn-route">Stop 2 to Stop 3</span>
               </div>
             </button>
-            <button class="route-tab-btn" data-route="home-hall" id="tabHomeHall" type="button">
+            <button class="route-tab-btn" data-route="home-hall" id="tabHomeHall" type="button" title="Direct driving route from Home to Marriage Hall">
               <div class="route-btn-icon"><i class="fa-solid fa-bolt"></i></div>
               <div class="route-btn-text">
                 <span class="route-btn-title">Direct Route</span>
-                <span class="route-btn-route">Home ➔ Hall (Direct)</span>
+                <span class="route-btn-route">Home ➔ Hall</span>
               </div>
             </button>
           </div>
@@ -1262,12 +1262,14 @@
 
       <!-- Creator Credit Line & Contact -->
       <div class="footer-simple-credit">
-        <span class="credit-badge">
-          <i class="fa-solid fa-heart credit-heart"></i>
+        <div class="credit-badge royal-seal-badge">
+          <span class="credit-jewel">
+            <i class="fa-solid fa-heart credit-heart"></i>
+          </span>
           <span class="credit-by-text">Created by</span>
-          <span class="creator-prefix">உயிர் உறவுகள்</span>
+          <span class="creator-chip-tamil">உயிர் உறவுகள்</span>
           <strong class="creator-names">Srikanth &amp; Loganathan</strong>
-        </span>
+        </div>
 
         <!-- Webtrion Agency Branding & Contact -->
         <div class="footer-webtrion-card">
@@ -1336,6 +1338,21 @@
 
     </div>
   </div>
+
+  <!-- Floating Corner Location & Route Map Button -->
+  <a 
+    href="#venuesSection" 
+    class="corner-floating-location-btn" 
+    id="cornerLocationBtn" 
+    title="View Wedding Venues & Route Guide"
+    aria-label="View Wedding Venues & Route Map"
+  >
+    <span class="corner-loc-pulse"></span>
+    <span class="corner-loc-icon-wrap">
+      <i class="fa-solid fa-location-dot"></i>
+    </span>
+    <span class="corner-loc-text">Location</span>
+  </a>
 
   <script src="script.js"></script>
 </body>

@@ -1222,4 +1222,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ==========================================================================
+     17. Floating Corner Location Button Smooth Navigation
+     ========================================================================== */
+  const cornerLocationBtn = document.getElementById('cornerLocationBtn');
+  if (cornerLocationBtn) {
+    cornerLocationBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetSec = document.getElementById('venuesSection');
+      if (targetSec) {
+        targetSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        targetSec.classList.add('venues-highlight-glow');
+        setTimeout(() => targetSec.classList.remove('venues-highlight-glow'), 2500);
+        showToast('📍 Navigated to Wedding Venues & Map');
+      }
+    });
+  }
+
 });

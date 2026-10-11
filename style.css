@@ -1412,6 +1412,74 @@ body {
   box-shadow: 0 8px 24px rgba(22, 54, 36, 0.38);
 }
 
+.royal-btn-action.location-btn {
+  position: relative;
+  background: linear-gradient(135deg, #163624 0%, #204b33 100%);
+  color: #ffffff;
+  border: 1.5px solid #ffd56b;
+  box-shadow: 
+    0 3px 14px rgba(22, 54, 36, 0.3),
+    0 0 12px rgba(212, 175, 55, 0.25);
+  text-decoration: none;
+  padding: 0.38rem 1.15rem;
+  overflow: visible;
+}
+
+.royal-btn-action.location-btn i {
+  color: #ffd56b;
+  font-size: 0.85rem;
+}
+
+.royal-btn-action.location-btn:hover {
+  background: linear-gradient(135deg, #1e4d34 0%, #2a6344 100%);
+  border-color: #ffffff;
+  color: #ffd56b;
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 20px rgba(22, 54, 36, 0.45),
+    0 0 18px rgba(212, 175, 55, 0.45);
+}
+
+/* Ornamental Golden Corner Lines */
+.btn-corner-line {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-color: #ffd56b;
+  border-style: solid;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+.btn-corner-line.tl {
+  top: -3px;
+  left: 7px;
+  border-width: 1.5px 0 0 1.5px;
+}
+
+.btn-corner-line.tr {
+  top: -3px;
+  right: 7px;
+  border-width: 1.5px 1.5px 0 0;
+}
+
+.btn-corner-line.bl {
+  bottom: -3px;
+  left: 7px;
+  border-width: 0 0 1.5px 1.5px;
+}
+
+.btn-corner-line.br {
+  bottom: -3px;
+  right: 7px;
+  border-width: 0 1.5px 1.5px 0;
+}
+
+.royal-btn-action.location-btn:hover .btn-corner-line {
+  border-color: #ffffff;
+  transform: scale(1.2);
+}
+
 /* Responsive Single Unified Card for Mobile */
 @media (max-width: 680px) {
   .royal-unified-card {

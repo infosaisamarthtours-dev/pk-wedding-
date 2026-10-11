@@ -5116,70 +5116,78 @@ body {
   top: 15vh;
   width: 140px;
   height: 180px;
-  /* 8s loop: Fly in 1.6s -> Stand stable in center for 3.0s -> Fly out 1.4s -> Pause offscreen 2.0s */
-  animation: romanticFlightPathPhoto 8s cubic-bezier(0.35, 0.05, 0.25, 1) infinite;
+  /* 9s loop: Starts stable in center for 3.0s -> flies off 1.5s -> pause offscreen 2.0s -> flies back into center 2.5s -> repeats */
+  animation: romanticFlightPathPhoto 9s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
 }
 
-/* Flight Path for Photo Bird: Enters from Right, Stands Stable in Center for 3s, Exits Left */
+/* Flight Path for Photo Bird: Starts Stable in Center for 3s, Flies off to Left, Pauses, Returns from Right */
 @keyframes romanticFlightPathPhoto {
+  /* 0.0s to 3.0s (0% to 33.3%): FIRST STABLE IN WEBSITE FOR 3 SECONDS */
   0% {
-    transform: translate3d(105vw, 0, 0);
-    opacity: 1;
-    visibility: visible;
-  }
-  /* 1.6s: Arrive at Center-Left of Screen */
-  20% {
     transform: translate3d(calc(50vw - 110px), 0, 0);
     opacity: 1;
     visibility: visible;
   }
-  /* 20% to 57.5% = EXACTLY 3.0 SECONDS STABLE STAND IN THE CENTER */
-  27% {
-    transform: translate3d(calc(50vw - 110px), -4px, 0);
-    opacity: 1;
-    visibility: visible;
-  }
-  35% {
-    transform: translate3d(calc(50vw - 110px), 2px, 0);
-    opacity: 1;
-    visibility: visible;
-  }
-  43% {
+  8% {
     transform: translate3d(calc(50vw - 110px), -3px, 0);
     opacity: 1;
     visibility: visible;
   }
-  50% {
+  16% {
     transform: translate3d(calc(50vw - 110px), 2px, 0);
     opacity: 1;
     visibility: visible;
   }
-  /* 4.6s (End of 3s stable stand): Begin flying off */
-  57.5% {
+  25% {
+    transform: translate3d(calc(50vw - 110px), -2px, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  33.3% {
     transform: translate3d(calc(50vw - 110px), 0, 0);
     opacity: 1;
     visibility: visible;
   }
-  /* 6.0s: Exit completely past left screen edge */
-  75% {
+  /* 3.0s to 4.5s (33.3% to 48%): After 3s, flies off to left */
+  38% {
+    transform: translate3d(calc(30vw - 110px), -0.5vh, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  48% {
     transform: translate3d(-260px, -1vh, 0);
     opacity: 1;
     visibility: visible;
   }
-  75.01% {
-    /* Instantly hide and reset to right side */
+  /* 48.01% to 68% (4.5s to 6.3s): Off-screen rest */
+  48.01% {
     transform: translate3d(105vw, 0, 0);
     opacity: 0;
     visibility: hidden;
   }
-  99.99% {
-    /* Off-screen rest for 2 seconds */
+  68% {
     transform: translate3d(105vw, 0, 0);
     opacity: 0;
     visibility: hidden;
+  }
+  /* 68.01% to 100% (6.3s to 9.0s): Flies gracefully in from right and settles stably at center */
+  68.01% {
+    transform: translate3d(105vw, 0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  82% {
+    transform: translate3d(calc(75vw), -1vh, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  94% {
+    transform: translate3d(calc(54vw - 110px), -0.5vh, 0);
+    opacity: 1;
+    visibility: visible;
   }
   100% {
-    transform: translate3d(105vw, 0, 0);
+    transform: translate3d(calc(50vw - 110px), 0, 0);
     opacity: 1;
     visibility: visible;
   }
@@ -5192,68 +5200,78 @@ body {
   top: 6.5vh; /* Flies higher & side-by-side with Bird 1 */
   width: 160px;
   height: 160px;
-  /* Synchronized 8s loop with 3.0s stable stand in center */
-  animation: romanticFlightPathDate 8s cubic-bezier(0.35, 0.05, 0.25, 1) infinite;
+  /* Synchronized 9s loop: Starts stable in center for 3.0s -> flies off -> repeats */
+  animation: romanticFlightPathDate 9s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
 }
 
-/* Flight Path for Date Bird: Enters from Right, Stands Stable in Center for 3s, Exits Left */
+/* Flight Path for Date Bird: Starts Stable in Center for 3s, Flies off to Left, Pauses, Returns from Right */
 @keyframes romanticFlightPathDate {
+  /* 0.0s to 3.0s (0% to 33.3%): FIRST STABLE IN WEBSITE FOR 3 SECONDS */
   0% {
-    transform: translate3d(calc(105vw + 120px), 0, 0);
-    opacity: 1;
-    visibility: visible;
-  }
-  /* 1.6s: Arrive at Center-Right of Screen (Framing center next to Photo Bird) */
-  20% {
     transform: translate3d(calc(50vw + 25px), 0, 0);
     opacity: 1;
     visibility: visible;
   }
-  /* 20% to 57.5% = EXACTLY 3.0 SECONDS STABLE STAND IN THE CENTER */
-  27% {
-    transform: translate3d(calc(50vw + 25px), -3px, 0);
+  8% {
+    transform: translate3d(calc(50vw + 25px), -2.5px, 0);
     opacity: 1;
     visibility: visible;
   }
-  35% {
-    transform: translate3d(calc(50vw + 25px), 3px, 0);
-    opacity: 1;
-    visibility: visible;
-  }
-  43% {
-    transform: translate3d(calc(50vw + 25px), -2px, 0);
-    opacity: 1;
-    visibility: visible;
-  }
-  50% {
+  16% {
     transform: translate3d(calc(50vw + 25px), 2px, 0);
     opacity: 1;
     visibility: visible;
   }
-  /* 4.6s (End of 3s stable stand): Begin flying off */
-  57.5% {
+  25% {
+    transform: translate3d(calc(50vw + 25px), -1.5px, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  33.3% {
     transform: translate3d(calc(50vw + 25px), 0, 0);
     opacity: 1;
     visibility: visible;
   }
-  /* 6.0s: Exit completely past left screen edge */
-  75% {
+  /* 3.0s to 4.5s (33.3% to 48%): After 3s, flies off to left */
+  38% {
+    transform: translate3d(calc(30vw + 25px), -0.5vh, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  48% {
     transform: translate3d(-260px, -0.5vh, 0);
     opacity: 1;
     visibility: visible;
   }
-  75.01% {
+  /* 48.01% to 68% (4.5s to 6.3s): Off-screen rest */
+  48.01% {
     transform: translate3d(calc(105vw + 120px), 0, 0);
     opacity: 0;
     visibility: hidden;
   }
-  99.99% {
+  68% {
     transform: translate3d(calc(105vw + 120px), 0, 0);
     opacity: 0;
     visibility: hidden;
+  }
+  /* 68.01% to 100% (6.3s to 9.0s): Flies gracefully in from right and settles stably at center */
+  68.01% {
+    transform: translate3d(calc(105vw + 120px), 0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  82% {
+    transform: translate3d(calc(78vw), -0.5vh, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  94% {
+    transform: translate3d(calc(54vw + 25px), -0.3vh, 0);
+    opacity: 1;
+    visibility: visible;
   }
   100% {
-    transform: translate3d(calc(105vw + 120px), 0, 0);
+    transform: translate3d(calc(50vw + 25px), 0, 0);
     opacity: 1;
     visibility: visible;
   }
@@ -5306,36 +5324,49 @@ body {
   margin-left: -58px; /* Aligns precisely with dove's beak clasp ring */
   transform-origin: top center;
   /* Aerodynamic tilt while flying, settles stable & vertical during 3s center stand */
-  animation: keychainAerodynamicSway 8s cubic-bezier(0.35, 0.05, 0.25, 1) infinite;
+  animation: keychainAerodynamicSway 9s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
 }
 
 @keyframes keychainAerodynamicSway {
+  /* 0.0s to 3.0s (0% to 33.3%): Stable vertical hanging in center */
   0% {
-    transform: rotate(14deg);
+    transform: rotate(0deg);
   }
-  18% {
-    transform: rotate(14deg);
+  8% {
+    transform: rotate(-0.6deg);
   }
-  24% {
-    transform: rotate(1deg); /* Quickly stabilizes as bird lands in center */
+  16% {
+    transform: rotate(0.6deg);
   }
-  35% {
-    transform: rotate(-1deg);
+  25% {
+    transform: rotate(-0.4deg);
   }
-  45% {
-    transform: rotate(1deg);
+  33.3% {
+    transform: rotate(0deg);
   }
-  56% {
-    transform: rotate(0deg); /* Stable during hover */
+  /* 33.3% to 48%: Tilts backward as bird flies away to left */
+  38% {
+    transform: rotate(12deg);
   }
-  62% {
-    transform: rotate(15deg); /* Tilts backward as bird flies out */
-  }
-  75% {
+  48% {
     transform: rotate(15deg);
   }
-  75.01% {
+  /* 48.01% to 68%: Off-screen rest */
+  48.01% {
     transform: rotate(0deg);
+  }
+  68% {
+    transform: rotate(0deg);
+  }
+  /* 68.01% to 100%: Inward flight tilt settling gracefully to vertical at center */
+  68.01% {
+    transform: rotate(14deg);
+  }
+  82% {
+    transform: rotate(14deg);
+  }
+  94% {
+    transform: rotate(3deg);
   }
   100% {
     transform: rotate(0deg);
@@ -5351,36 +5382,49 @@ body {
   margin-left: -58px;
   transform-origin: top center;
   /* Aerodynamic tilt while flying, settles stable & vertical during 3s center stand */
-  animation: dateAerodynamicSway 8s cubic-bezier(0.35, 0.05, 0.25, 1) infinite;
+  animation: dateAerodynamicSway 9s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
 }
 
 @keyframes dateAerodynamicSway {
+  /* 0.0s to 3.0s (0% to 33.3%): Stable vertical hanging in center */
   0% {
-    transform: rotate(13deg);
+    transform: rotate(0deg);
   }
-  18% {
-    transform: rotate(13deg);
-  }
-  24% {
-    transform: rotate(0.5deg); /* Quickly stabilizes as bird lands in center */
-  }
-  35% {
+  8% {
     transform: rotate(-0.5deg);
   }
-  45% {
+  16% {
     transform: rotate(0.5deg);
   }
-  56% {
-    transform: rotate(0deg); /* Stable during hover */
+  25% {
+    transform: rotate(-0.3deg);
   }
-  62% {
-    transform: rotate(14deg); /* Tilts backward as bird flies out */
+  33.3% {
+    transform: rotate(0deg);
   }
-  75% {
+  /* 33.3% to 48%: Tilts backward as bird flies away to left */
+  38% {
+    transform: rotate(11deg);
+  }
+  48% {
     transform: rotate(14deg);
   }
-  75.01% {
+  /* 48.01% to 68%: Off-screen rest */
+  48.01% {
     transform: rotate(0deg);
+  }
+  68% {
+    transform: rotate(0deg);
+  }
+  /* 68.01% to 100%: Inward flight tilt settling gracefully to vertical at center */
+  68.01% {
+    transform: rotate(13deg);
+  }
+  82% {
+    transform: rotate(13deg);
+  }
+  94% {
+    transform: rotate(2.5deg);
   }
   100% {
     transform: rotate(0deg);
@@ -5602,116 +5646,144 @@ body {
   }
 
   @keyframes romanticFlightPathPhotoMobile {
+    /* 0.0s to 3.0s (0% to 33.3%): FIRST STABLE IN WEBSITE FOR 3 SECONDS */
     0% {
-      transform: translate3d(105vw, 0, 0);
-      opacity: 1;
-      visibility: visible;
-    }
-    20% {
       transform: translate3d(calc(50vw - 85px), 0, 0);
       opacity: 1;
       visibility: visible;
     }
-    27% {
-      transform: translate3d(calc(50vw - 85px), -3px, 0);
-      opacity: 1;
-      visibility: visible;
-    }
-    35% {
-      transform: translate3d(calc(50vw - 85px), 2px, 0);
-      opacity: 1;
-      visibility: visible;
-    }
-    43% {
+    8% {
       transform: translate3d(calc(50vw - 85px), -2px, 0);
       opacity: 1;
       visibility: visible;
     }
-    50% {
-      transform: translate3d(calc(50vw - 85px), 2px, 0);
+    16% {
+      transform: translate3d(calc(50vw - 85px), 1.5px, 0);
       opacity: 1;
       visibility: visible;
     }
-    57.5% {
+    25% {
+      transform: translate3d(calc(50vw - 85px), -1px, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    33.3% {
       transform: translate3d(calc(50vw - 85px), 0, 0);
       opacity: 1;
       visibility: visible;
     }
-    75% {
+    /* 3.0s to 4.5s (33.3% to 48%): After 3s, flies off to left */
+    38% {
+      transform: translate3d(calc(25vw - 85px), -0.5vh, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    48% {
       transform: translate3d(-200px, -1vh, 0);
       opacity: 1;
       visibility: visible;
     }
-    75.01% {
+    /* 48.01% to 68% (4.5s to 6.3s): Off-screen rest */
+    48.01% {
       transform: translate3d(105vw, 0, 0);
       opacity: 0;
       visibility: hidden;
     }
-    99.99% {
+    68% {
       transform: translate3d(105vw, 0, 0);
       opacity: 0;
       visibility: hidden;
+    }
+    /* 68.01% to 100% (6.3s to 9.0s): Flies gracefully in from right and settles stably at center */
+    68.01% {
+      transform: translate3d(105vw, 0, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    82% {
+      transform: translate3d(calc(75vw), -0.5vh, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    94% {
+      transform: translate3d(calc(53vw - 85px), 0, 0);
+      opacity: 1;
+      visibility: visible;
     }
     100% {
-      transform: translate3d(105vw, 0, 0);
+      transform: translate3d(calc(50vw - 85px), 0, 0);
       opacity: 1;
       visibility: visible;
     }
   }
 
   @keyframes romanticFlightPathDateMobile {
+    /* 0.0s to 3.0s (0% to 33.3%): FIRST STABLE IN WEBSITE FOR 3 SECONDS */
     0% {
-      transform: translate3d(calc(105vw + 80px), 0, 0);
-      opacity: 1;
-      visibility: visible;
-    }
-    20% {
       transform: translate3d(calc(50vw + 8px), 0, 0);
       opacity: 1;
       visibility: visible;
     }
-    27% {
-      transform: translate3d(calc(50vw + 8px), -2px, 0);
+    8% {
+      transform: translate3d(calc(50vw + 8px), -1.5px, 0);
       opacity: 1;
       visibility: visible;
     }
-    35% {
-      transform: translate3d(calc(50vw + 8px), 2px, 0);
-      opacity: 1;
-      visibility: visible;
-    }
-    43% {
-      transform: translate3d(calc(50vw + 8px), -2px, 0);
-      opacity: 1;
-      visibility: visible;
-    }
-    50% {
+    16% {
       transform: translate3d(calc(50vw + 8px), 1px, 0);
       opacity: 1;
       visibility: visible;
     }
-    57.5% {
+    25% {
+      transform: translate3d(calc(50vw + 8px), -1px, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    33.3% {
       transform: translate3d(calc(50vw + 8px), 0, 0);
       opacity: 1;
       visibility: visible;
     }
-    75% {
+    /* 3.0s to 4.5s (33.3% to 48%): After 3s, flies off to left */
+    38% {
+      transform: translate3d(calc(25vw + 8px), -0.3vh, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    48% {
       transform: translate3d(-200px, -0.5vh, 0);
       opacity: 1;
       visibility: visible;
     }
-    75.01% {
+    /* 48.01% to 68% (4.5s to 6.3s): Off-screen rest */
+    48.01% {
       transform: translate3d(calc(105vw + 80px), 0, 0);
       opacity: 0;
       visibility: hidden;
     }
-    99.99% {
+    68% {
       transform: translate3d(calc(105vw + 80px), 0, 0);
       opacity: 0;
       visibility: hidden;
+    }
+    /* 68.01% to 100% (6.3s to 9.0s): Flies gracefully in from right and settles stably at center */
+    68.01% {
+      transform: translate3d(calc(105vw + 80px), 0, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    82% {
+      transform: translate3d(calc(78vw), -0.5vh, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    94% {
+      transform: translate3d(calc(53vw + 8px), 0, 0);
+      opacity: 1;
+      visibility: visible;
     }
     100% {
-      transform: translate3d(calc(105vw + 80px), 0, 0);
+      transform: translate3d(calc(50vw + 8px), 0, 0);
       opacity: 1;
       visibility: visible;
     }

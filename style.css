@@ -1411,12 +1411,13 @@ body {
 
 .grand-person-name {
   font-family: var(--font-royal);
-  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+  font-size: clamp(1.25rem, 2.2vw, 1.85rem);
   font-weight: 800;
   color: #163624;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.6px;
   line-height: 1.25;
   margin-bottom: 0.35rem;
+  white-space: nowrap;
 }
 
 .grand-degree-badge {
@@ -1458,6 +1459,187 @@ body {
   font-weight: 700;
   color: #173827;
   line-height: 1.4;
+}
+
+/* =========================================================================
+   OUR BELOVED BROTHERS (CLEAN UNIFIED SECTION - NO NESTED CARDS)
+   ========================================================================= */
+.brothers-unified-section {
+  width: 100%;
+  margin: 2.2rem 0 1.2rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.brothers-section-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.brothers-tamil-eyebrow {
+  display: block;
+  font-family: var(--font-tamil);
+  font-size: 0.94rem;
+  color: #7a5406;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.4px;
+}
+
+.brothers-main-title {
+  font-family: var(--font-royal);
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  color: #163624;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin-bottom: 0.45rem;
+}
+
+.brothers-dual-columns {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 1.8rem;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.brothers-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.2rem 1.2rem;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 18px;
+  border: 1.2px dashed rgba(184, 134, 11, 0.35);
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.brothers-column:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(184, 134, 11, 0.65);
+}
+
+.groom-column {
+  border-top: 3px solid #1c452e;
+}
+
+.bride-column {
+  border-top: 3px solid #872033;
+}
+
+.brothers-col-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 1.1rem;
+  width: 100%;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px dashed rgba(184, 134, 11, 0.22);
+}
+
+.brothers-col-header .grand-role-pill {
+  margin-bottom: 0;
+}
+
+.brothers-col-tamil {
+  font-family: var(--font-tamil);
+  font-size: 0.84rem;
+  color: #7a5406;
+  font-weight: 600;
+}
+
+.brothers-members-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  width: 100%;
+}
+
+.brother-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+.brother-name-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
+.brother-flourish {
+  color: #c4962c;
+  font-size: 0.75rem;
+}
+
+.brother-name {
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #163624;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+}
+
+.brother-degree {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 50px;
+  background: rgba(184, 134, 11, 0.1);
+  border: 1px solid rgba(184, 134, 11, 0.3);
+  color: #7a5406;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.brother-degree i {
+  font-size: 0.72rem;
+  color: #b8860b;
+}
+
+/* Inter-Column Center Divider on Desktop */
+.brothers-mid-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  flex-shrink: 0;
+}
+
+.mid-div-line {
+  flex: 1;
+  width: 1.5px;
+  background: linear-gradient(180deg, transparent, rgba(184, 134, 11, 0.45), transparent);
+}
+
+.mid-div-knot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(184, 134, 11, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b8860b;
+  font-size: 0.65rem;
+  margin: 0.35rem 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 /* Central Sacred Weds Connector */
@@ -1723,8 +1905,8 @@ body {
   }
 
   .grand-person-name {
-    font-size: 1.22rem;
-    white-space: normal;
+    font-size: clamp(1.05rem, 3.6vw, 1.25rem);
+    white-space: nowrap;
     margin-bottom: 0.25rem;
     line-height: 1.2;
   }
@@ -1750,6 +1932,41 @@ body {
     line-height: 1.35;
   }
 
+  .brothers-dual-columns {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .brothers-mid-divider {
+    flex-direction: row;
+    width: 100%;
+    height: 24px;
+    margin: -0.2rem 0;
+  }
+
+  .mid-div-line {
+    width: auto;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.45), transparent);
+  }
+
+  .mid-div-knot {
+    margin: 0 0.5rem;
+  }
+
+  .brothers-column {
+    padding: 1.1rem 1rem;
+    border-radius: 16px;
+  }
+
+  .brother-name {
+    font-size: 1.02rem;
+  }
+
+  .brother-degree {
+    font-size: 0.74rem;
+  }
+
   @media (max-width: 400px) {
     .grand-profile-row {
       padding: 0.95rem 0.75rem;
@@ -1765,11 +1982,25 @@ body {
     }
 
     .grand-person-name {
-      font-size: 1.05rem;
+      font-size: 0.98rem;
+      white-space: nowrap;
     }
 
     .family-parents-text {
       font-size: 0.85rem;
+    }
+
+    .brothers-column {
+      padding: 1rem 0.75rem;
+    }
+
+    .brother-name {
+      font-size: 0.96rem;
+    }
+
+    .brother-degree {
+      font-size: 0.7rem;
+      padding: 0.16rem 0.55rem;
     }
   }
 

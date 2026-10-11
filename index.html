@@ -1057,23 +1057,35 @@
             </p>
           </div>
 
-          <!-- ROUTE SELECTOR TABS -->
-          <div class="route-tabs-bar" role="tablist">
-            <button class="route-tab-btn active" data-route="complete" id="tabComplete">
-              <i class="fa-solid fa-arrows-split-up-and-left"></i>
-              <span>All Stops (Home ➔ TVM ➔ Hall)</span>
+          <!-- ROUTE SELECTOR TABS - ALL VISIBLE RESPONSIVE GRID -->
+          <div class="route-tabs-bar" role="tablist" aria-label="Wedding Route Choices">
+            <button class="route-tab-btn active" data-route="complete" id="tabComplete" type="button">
+              <div class="route-btn-icon"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+              <div class="route-btn-text">
+                <span class="route-btn-title">All Stops</span>
+                <span class="route-btn-route">Home ➔ TVM ➔ Hall</span>
+              </div>
             </button>
-            <button class="route-tab-btn" data-route="home-tvm" id="tabHomeTvm">
-              <i class="fa-solid fa-car-side"></i>
-              <span>Home ➔ Tiruvannamalai</span>
+            <button class="route-tab-btn" data-route="home-tvm" id="tabHomeTvm" type="button">
+              <div class="route-btn-icon"><i class="fa-solid fa-car-side"></i></div>
+              <div class="route-btn-text">
+                <span class="route-btn-title">Stop 1 ➔ 2</span>
+                <span class="route-btn-route">Home ➔ Tiruvannamalai</span>
+              </div>
             </button>
-            <button class="route-tab-btn" data-route="tvm-hall" id="tabTvmHall">
-              <i class="fa-solid fa-car-side"></i>
-              <span>Tiruvannamalai ➔ Marriage Hall</span>
+            <button class="route-tab-btn" data-route="tvm-hall" id="tabTvmHall" type="button">
+              <div class="route-btn-icon"><i class="fa-solid fa-car-side"></i></div>
+              <div class="route-btn-text">
+                <span class="route-btn-title">Stop 2 ➔ 3</span>
+                <span class="route-btn-route">TVM ➔ Marriage Hall</span>
+              </div>
             </button>
-            <button class="route-tab-btn" data-route="home-hall" id="tabHomeHall">
-              <i class="fa-solid fa-bolt"></i>
-              <span>Home ➔ Hall (Direct)</span>
+            <button class="route-tab-btn" data-route="home-hall" id="tabHomeHall" type="button">
+              <div class="route-btn-icon"><i class="fa-solid fa-bolt"></i></div>
+              <div class="route-btn-text">
+                <span class="route-btn-title">Direct Route</span>
+                <span class="route-btn-route">Home ➔ Hall (Direct)</span>
+              </div>
             </button>
           </div>
 
@@ -1248,11 +1260,38 @@
         With love, blessings and heartfelt gratitude for celebrating our sacred union with us.
       </p>
 
-      <!-- Creator Credit Line -->
+      <!-- Creator Credit Line & Contact -->
       <div class="footer-simple-credit">
         <span class="credit-badge">
-          <i class="fa-solid fa-heart credit-heart"></i> Created by <span class="creator-prefix">உயிர் உறவுகள்</span> <strong class="creator-names">Srikanth &amp; Loganathan</strong>
+          <i class="fa-solid fa-heart credit-heart"></i>
+          <span class="credit-by-text">Created by</span>
+          <span class="creator-prefix">உயிர் உறவுகள்</span>
+          <strong class="creator-names">Srikanth &amp; Loganathan</strong>
         </span>
+
+        <!-- Webtrion Agency Branding & Contact -->
+        <div class="footer-webtrion-card">
+          <div class="webtrion-brand-row">
+            <img src="webtrion logo.jpeg" alt="Webtrion Logo" class="webtrion-logo-img">
+            <span class="webtrion-brand-name">Webtrion</span>
+            <a href="https://www.instagram.com/webtrion.tech?xtok=OHNzaHEwem52amlw" target="_blank" rel="noopener noreferrer" class="webtrion-insta-btn" title="Follow Webtrion on Instagram">
+              <i class="fa-brands fa-instagram"></i>
+              <span>@webtrion.tech</span>
+            </a>
+          </div>
+
+          <div class="webtrion-contact-row">
+            <a href="tel:+919047634267" class="webtrion-phone-chip" title="Call +91 9047634267">
+              <i class="fa-solid fa-phone"></i>
+              <span>+91 9047634267</span>
+            </a>
+            <span class="contact-sep">•</span>
+            <a href="tel:+916381696124" class="webtrion-phone-chip" title="Call +91 6381696124">
+              <i class="fa-solid fa-phone"></i>
+              <span>+91 6381696124</span>
+            </a>
+          </div>
+        </div>
       </div>
 
       <!-- Bottom Minimal Copyright -->

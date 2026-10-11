@@ -1898,13 +1898,37 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 12%;
+  transform-origin: center 15%;
   display: block;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   user-select: none;
 }
 
+/* Precise Facial Framing to ensure heads and faces are 100% visible */
+.gallery-photo-box img[src*="pk 2"] {
+  object-position: center 3%;
+  transform-origin: center 12%;
+}
+
+.gallery-photo-box img[src*="pk 4"] {
+  object-position: center 6%;
+  transform-origin: center 15%;
+}
+
+.gallery-photo-box img[src*="pk 3"] {
+  object-position: center 10%;
+  transform-origin: center 18%;
+}
+
+.gallery-photo-box img[src*="pk main 1"],
+.gallery-photo-box img[src*="pk main 2"] {
+  object-position: center 14%;
+  transform-origin: center 20%;
+}
+
 .gallery-carousel-card:hover .gallery-photo-box img {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 /* Quick Zoom Badge (Top Right) */
